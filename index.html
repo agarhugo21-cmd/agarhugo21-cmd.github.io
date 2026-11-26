@@ -356,7 +356,7 @@ Compilado en Digitech FP Madrid (2025 – 2027)
 System image file is "<span class="w">bachillerato-ciencias.bin</span>"
   (Colegio Paula Frassinetti, Avilés · 2019 – 2021)
 
-Idiomas      : Español (nativo), Inglés <span class="w">B1</span>
+Idiomas      : Inglés <span class="w">B1</span>
 Ubicación    : Madrid
 Carnet       : B
 Logros       : <span class="a">Finalista ASTI Robotics Challenge 2026</span>
@@ -688,7 +688,7 @@ var IFS=[
   ['Gi0/5','Virtualización',['VirtualBox','VMware'],4],
   ['Gi0/6','Bases de datos',['MySQL','Oracle','MySQL Workbench','Triggers'],4],
   ['Gi0/7','Desarrollo',['HTML','CSS','JavaScript','Python','Arduino'],4],
-  ['Gi0/8','Idiomas',['Español nativo','Inglés B1'],3]
+  ['Gi0/8','Idiomas',['Inglés B1'],3]
 ];
 var tb=$('#if-body');
 IFS.forEach(function(r){var tr=document.createElement('tr');var bars='';for(var i=1;i<=5;i++)bars+='<i class="'+(i<=r[3]?'on':'')+'"></i>';
@@ -800,7 +800,7 @@ var C={
     '  <span class="c">sudo contratar</span>           …',
     '  <span class="c">clear</span>                    limpiar pantalla'].join('\n'));},
   whoami:function(){out('<span class="w">Hugo González García</span>\nEstudiante de 2.º de ASIR en Digitech FP Madrid.\nRedes, sistemas y bases de datos. Finalista del ASTI Robotics Challenge 2026.');},
-  'show version':function(){out('Hugo González García, versión <span class="w">ASIR 2.º curso</span>\nuptime is <span class="a">'+uptime()+'</span>\nIdiomas: español (nativo), inglés B1 · Madrid · Carnet B\nEstado: <span class="g">disponible para prácticas</span>');},
+  'show version':function(){out('Hugo González García, versión <span class="w">ASIR 2.º curso</span>\nuptime is <span class="a">'+uptime()+'</span>\nIdiomas: inglés B1 · Madrid · Carnet B\nEstado: <span class="g">disponible para prácticas</span>');},
   'show ip interface brief':function(){var s='<span class="d">Interface   Área              Status    Protocol</span>\n';
     IFS.forEach(function(r){s+=(r[0]+'      ').slice(0,12)+(r[1]+'                  ').slice(0,18)+'<span class="g">up        up</span>\n';});out(s.replace(/\n$/,''));},
   proyectos:function(){out(['<span class="d">#  Proyecto                        Área</span>','1  Robotics Masters (finalista)    robótica','2  La Casa Antigua 1899            web','3  Triggers para una tienda        bases de datos','4  Proyecto final de redes         redes','5  Laboratorio de sistemas         sistemas','','Escribe <span class="c">proyecto 1</span> para abrir uno.'].join('\n'));},
