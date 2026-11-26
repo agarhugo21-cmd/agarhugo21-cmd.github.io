@@ -1,4 +1,8 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Hugo González García · ASIR, sistemas y redes · Madrid</title>
 <meta name="description" content="Portfolio de Hugo González García, estudiante de Administración de Sistemas Informáticos en Red (ASIR) en Madrid. Redes Cisco, Windows Server, Linux y bases de datos.">
 <meta property="og:title" content="Hugo González García · ASIR, sistemas y redes">
@@ -307,8 +311,57 @@ dialog::backdrop{background:rgba(2,5,9,.88);backdrop-filter:blur(4px)}
   .cc button,.cc .go{grid-column:2;justify-self:start}
   .bar .host span.full{display:none}
 }
+/* ---------- ayuda ---------- */
+.ay{font-size:18px}
+.ay .ay-lead{color:var(--fg-2);max-width:62ch;margin-top:16px;font-size:19px;line-height:1.6}
+.ay .ay-lead b{color:var(--fg)}
+.ay-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:36px}
+.ay-card{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:24px}
+.ay-card h3{font-size:21px;margin:14px 0 10px}
+.ay-card ul{margin:0;padding-left:20px;color:var(--fg-2);line-height:1.55}
+.ay-card li{margin:4px 0}
+.ay-ia{border-color:var(--cyan-deep);grid-column:1/-1}
+.ay-ia ul{columns:2;column-gap:40px}
+.ay-ia li{break-inside:avoid}
+.nav a{white-space:nowrap}
+.ay-note{margin:12px 0 0;color:var(--cyan);font-size:16px}
+.ay-ic{width:46px;height:46px;border-radius:11px;display:grid;place-items:center;background:#122233;color:var(--cyan);flex:none}
+.ay-ic svg{width:24px;height:24px}
+.ay-biz{margin-top:22px;color:var(--fg-2);line-height:1.6}
+.ay-biz b{color:var(--fg)}
+.ay-how{margin-top:40px}
+.ay-how h3,.ay-contact h3{font-size:23px;margin:0 0 14px}
+.ay-how ol{margin:0;padding-left:24px;line-height:1.6;color:var(--fg-2);max-width:70ch}
+.ay-how li{margin:8px 0}
+.ay-how b,.ay-safe b{color:var(--fg)}
+.ay-when{margin-top:12px;color:var(--amber)}
+.ay-safe{display:flex;gap:18px;align-items:flex-start;margin-top:32px;padding:22px 24px;border-radius:14px;border:1px solid rgba(255,181,71,.45);background:rgba(255,181,71,.06)}
+.ay-safe .ay-ic{background:rgba(255,181,71,.14);color:var(--amber)}
+.ay-safe h3{font-size:20px;margin:0 0 6px}
+.ay-safe p{margin:0;color:var(--fg-2);line-height:1.6}
+.ay-contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:40px;margin-top:40px;align-items:start}
+.ay-btns{display:grid;gap:12px}
+.ay-btn{display:flex;align-items:center;gap:12px;font:600 19px var(--body);padding:16px 20px;border-radius:12px;text-decoration:none;color:var(--fg);background:var(--bg-2);border:1px solid var(--line-2)}
+.ay-btn svg{width:24px;height:24px;flex:none}
+.ay-btn:hover{border-color:var(--cyan)}
+.ay-btn.wa{background:#1f8f4e;border-color:#1f8f4e;color:#fff}
+.ay-form{display:grid;gap:14px;background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:24px}
+.ay-form label{display:grid;gap:6px;font-size:16.5px;color:var(--fg-2)}
+.ay-form input:not([type=checkbox]),.ay-form select,.ay-form textarea{font:400 18px var(--body);color:var(--fg);background:var(--bg);border:1px solid var(--line-2);border-radius:9px;padding:12px 14px;width:100%;box-sizing:border-box}
+.ay-form textarea{resize:vertical}
+.ay-form input:focus,.ay-form select:focus,.ay-form textarea:focus{outline:2px solid var(--cyan);outline-offset:1px}
+.ay-form .ay-ok{display:flex;gap:10px;align-items:flex-start;font-size:15.5px}
+.ay-form .ay-ok input{width:20px;height:20px;margin-top:2px;flex:none}
+.ay-form .btn{justify-self:start;font-size:18px;padding:14px 26px}
+.ay-hp{position:absolute;left:-9999px}
+.ay-msg{margin:0;min-height:1.4em;font-size:16.5px}
+.ay-msg.ok{color:var(--up)}.ay-msg.err{color:var(--down)}
+@media (max-width:860px){.ay-contact{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:700px){.ay-ia ul{columns:1}}
+@media (max-width:600px){.ay{font-size:17px}.ay-card{padding:20px}.ay-safe{flex-direction:column}}
 </style>
-
+</head>
+<body>
 
 <header class="bar">
   <div class="wrap">
@@ -319,6 +372,7 @@ dialog::backdrop{background:rgba(2,5,9,.88);backdrop-filter:blur(4px)}
       <li><a href="#proyectos"><small>30</small>proyectos</a></li>
       <li><a href="#trayectoria"><small>40</small>trayectoria</a></li>
       <li><a href="#consola"><small>50</small>consola</a></li>
+      <li><a href="#ayuda"><small>60</small>ayuda</a></li>
     </ul>
     <span class="uptime" id="uptime">uptime ASIR: —</span>
     <a class="cta-sm" href="#contacto">Contacto</a>
@@ -570,6 +624,87 @@ Estado       : <span class="g">disponible para prácticas</span></pre>
       <form class="prompt-row" id="prompt" autocomplete="off">
         <label for="cmd">invitado@HUGO-R1:~$</label>
         <input id="cmd" name="cmd" type="text" spellcheck="false" autocapitalize="off" aria-label="Escribe un comando">
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== AYUDA ===================== -->
+<section id="ayuda" class="ay">
+  <div class="wrap">
+    <div class="sec-head"><span class="vlan">VLAN 60</span><span class="subnet">10.0.60.0/24 · ayuda</span></div>
+    <h2>¿Te ayudo con el ordenador o el móvil?</h2>
+    <p class="ay-lead">Mientras estudio, ayudo de forma <b>voluntaria y sin coste</b> a quien lo necesite: personas mayores, sus familias, particulares y pequeños negocios. Por teléfono, por videollamada o conectándome a tu ordenador.</p>
+
+    <div class="ay-grid">
+      <article class="ay-card">
+        <span class="ay-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></span>
+        <h3>Móvil y tablet</h3>
+        <ul><li>WhatsApp y videollamadas con la familia</li><li>Fotos: verlas, enviarlas y guardarlas</li><li>Letra más grande y móvil más fácil</li><li>Instalar y usar aplicaciones</li><li>Configurar un móvil nuevo</li></ul>
+      </article>
+      <article class="ay-card">
+        <span class="ay-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+        <h3>Ordenador</h3>
+        <ul><li>Que vaya más rápido</li><li>Wifi, impresora y actualizaciones</li><li>Instalar y configurar programas</li><li>Copias de seguridad de tus archivos</li><li>Ajustes para verlo y usarlo mejor</li></ul>
+      </article>
+      <article class="ay-card">
+        <span class="ay-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span>
+        <h3>Word y Office</h3>
+        <ul><li>Escribir y dar formato a documentos</li><li>Cartas, escritos y currículums</li><li>Excel básico: listas y cuentas</li><li>Guardar en PDF e imprimir</li><li>Correo electrónico y adjuntos</li></ul>
+      </article>
+      <article class="ay-card">
+        <span class="ay-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <h3>Seguridad y estafas</h3>
+        <ul><li>Revisar si un SMS, correo o WhatsApp es un timo</li><li>Contraseñas seguras y fáciles de recordar</li><li>Antivirus y protección del equipo</li><li>Qué hacer si has caído en una estafa</li></ul>
+      </article>
+      <article class="ay-card ay-ia">
+        <span class="ay-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span>
+        <h3>Aprender a usar la IA</h3>
+        <ul><li>Qué son ChatGPT, Gemini o Copilot y para qué sirven</li><li>Cómo preguntarle para que te entienda</li><li>Usarla para escribir un correo, resumir una carta o planear un viaje</li><li>Qué no contarle y cómo comprobar lo que dice</li></ul>
+        <p class="ay-note">Clases sencillas por videollamada, a tu ritmo.</p>
+      </article>
+    </div>
+    <p class="ay-biz"><b>¿Tienes un pequeño negocio?</b> También te echo una mano con los ordenadores, el wifi, la impresora o el correo de tu tienda o despacho.</p>
+
+    <div class="ay-how">
+      <h3>Cómo funciona</h3>
+      <ol>
+        <li><b>Me escribes o me llamas</b> y me cuentas qué te pasa. No hace falta saber explicarlo con palabras técnicas.</li>
+        <li><b>Quedamos un momento</b> por teléfono o videollamada. Si hace falta, me conecto a tu ordenador con <b>AnyDesk</b>: te explico paso a paso cómo instalarlo.</li>
+        <li><b>Lo resolvemos juntos</b> y te explico cómo hacerlo tú la próxima vez.</li>
+      </ol>
+      <p class="ay-when">No tengo horario fijo: escríbeme y te digo cuándo puedo atenderte.</p>
+    </div>
+
+    <div class="ay-safe" role="note">
+      <span class="ay-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+      <div>
+        <h3>Tu seguridad, lo primero</h3>
+        <p>Solo me conecto a tu ordenador si <b>tú me has pedido ayuda antes</b>. Nunca te pediré contraseñas del banco, códigos que te lleguen por SMS ni dinero. Si alguien te llama diciendo que es «del servicio técnico» sin que tú lo hayas pedido, <b>cuelga</b>: es un timo.</p>
+      </div>
+    </div>
+
+    <div class="ay-contact">
+      <div>
+        <h3>Pídeme ayuda</h3>
+        <div class="ay-btns">
+          <a class="ay-btn wa" href="https://wa.me/34620591880?text=Hola%20Hugo%2C%20necesito%20ayuda%20con%20" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3a.4.4 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3z"/></svg>WhatsApp</a>
+          <a class="ay-btn" href="tel:+34620591880"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Llamar: 620 591 880</a>
+          <a class="ay-btn" href="mailto:agarhugo21@gmail.com?subject=Necesito%20ayuda%20inform%C3%A1tica"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a>
+        </div>
+      </div>
+      <form class="ay-form" id="ay-form" novalidate>
+        <h3>O déjame tus datos y te llamo yo</h3>
+        <label>Nombre<input name="nombre" required autocomplete="name"></label>
+        <label>Teléfono o email<input name="contacto" required autocomplete="tel"></label>
+        <label>¿Cómo prefieres que te contacte?
+          <select name="preferencia"><option>WhatsApp</option><option>Llamada de teléfono</option><option>Videollamada</option><option>Email</option></select>
+        </label>
+        <label>¿Qué te pasa o en qué te ayudo?<textarea name="mensaje" rows="4" required></textarea></label>
+        <input type="checkbox" name="botcheck" class="ay-hp" tabindex="-1" autocomplete="off">
+        <label class="ay-ok"><input type="checkbox" name="acepto" required> Acepto que Hugo use estos datos solo para contestarme.</label>
+        <button class="btn pri" type="submit">Enviar</button>
+        <p class="ay-msg" id="ay-msg" aria-live="polite"></p>
       </form>
     </div>
   </div>
@@ -873,4 +1008,32 @@ out('Bienvenido. Escribe <span class="c">help</span> para ver los comandos.');
 })();
 </script>
 
-</body></html>
+<script>
+/* ---------- formulario de ayuda ---------- */
+(function(){
+  var W3F_KEY=''; // clave de web3forms.com: mientras esté vacía, el formulario abre el correo
+  var f=document.getElementById('ay-form'); if(!f) return;
+  var msg=document.getElementById('ay-msg');
+  f.addEventListener('submit',function(e){
+    e.preventDefault(); msg.className='ay-msg';
+    if(!f.checkValidity()){msg.className='ay-msg err';msg.textContent='Rellena tu nombre, cómo contactarte y qué te pasa, y marca la casilla.';return;}
+    if(f.botcheck.checked) return;
+    var d={nombre:f.nombre.value.trim(),contacto:f.contacto.value.trim(),preferencia:f.preferencia.value,mensaje:f.mensaje.value.trim()};
+    var texto='Nombre: '+d.nombre+'\nContacto: '+d.contacto+'\nPrefiere: '+d.preferencia+'\n\n'+d.mensaje;
+    if(!W3F_KEY){
+      location.href='mailto:agarhugo21@gmail.com?subject='+encodeURIComponent('Petición de ayuda: '+d.nombre)+'&body='+encodeURIComponent(texto);
+      msg.textContent='Se ha abierto tu correo con el mensaje preparado. Solo tienes que pulsar Enviar.';return;
+    }
+    var b=f.querySelector('button'); b.disabled=true; msg.textContent='Enviando…';
+    fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body:JSON.stringify({access_key:W3F_KEY,subject:'Petición de ayuda: '+d.nombre,from_name:'hugogonzalezgarcia.es',nombre:d.nombre,contacto:d.contacto,preferencia:d.preferencia,mensaje:d.mensaje})})
+    .then(function(r){return r.json();}).then(function(j){
+      if(j.success){f.reset();msg.className='ay-msg ok';msg.textContent='¡Recibido! Te contesto lo antes posible.';}
+      else throw 0;
+    }).catch(function(){msg.className='ay-msg err';msg.textContent='No se ha podido enviar. Escríbeme por WhatsApp o llámame al 620 591 880.';})
+    .finally(function(){b.disabled=false;});
+  });
+})();
+</script>
+</body>
+</html>
