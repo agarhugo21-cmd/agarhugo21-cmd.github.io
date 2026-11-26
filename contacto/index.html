@@ -400,6 +400,24 @@ html{scroll-padding-top:90px}
 .pager a{display:grid;gap:4px;padding:14px 18px;border:1px solid var(--line);border-radius:12px;background:var(--bg-2);color:var(--fg);text-decoration:none;font-weight:600;min-width:180px;transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s}
 .pager a small{font:500 11.5px var(--mono);color:var(--dim)}.pager .pg-next{text-align:right;margin-left:auto}
 .pager a:hover{border-color:var(--cyan-deep)}.pager .pg-prev:hover{transform:translateX(-4px)}.pager .pg-next:hover{transform:translateX(4px)}
+/* ---------- datos, herramientas y privacidad ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:26px}
+.stats div{padding:16px 16px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg-2)}
+.stats b{display:block;font:700 30px var(--display);color:var(--cyan);line-height:1}
+.stats span{display:block;margin-top:6px;font:500 11.5px var(--mono);color:var(--dim);text-transform:uppercase;letter-spacing:.06em}
+@media (max-width:640px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tools{margin-top:56px}.tools-h{font-size:clamp(24px,3vw,32px);margin:0 0 6px}.tools-p{color:var(--fg-2);margin:0 0 22px}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.tg{padding:16px 18px;border:1px solid var(--line);border-radius:12px;background:var(--bg-2);transition:border-color .3s,transform .3s cubic-bezier(.2,.8,.2,1)}
+.tg:hover{border-color:var(--cyan-deep);transform:translateY(-3px)}
+.tg h3{display:flex;align-items:center;gap:10px;font:600 15px var(--body);margin:0 0 12px}
+.tg h3 svg{width:28px;height:28px;padding:5px;border-radius:8px;background:rgba(71,198,255,.10);color:var(--cyan);flex:none}
+.tg h3 small{margin-left:auto;font:500 11px var(--mono);color:var(--dim)}
+.tg ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.tg li{font:500 12.5px var(--mono);padding:4px 9px;border:1px solid var(--line-2);border-radius:6px;color:var(--fg)}
+footer a{color:inherit;text-decoration:underline;text-underline-offset:3px}footer a:hover{color:var(--cyan)}
+.ay-ok a{color:var(--cyan)}
+.legal{max-width:780px}.legal h2{font-size:21px;margin:34px 0 8px}.legal p,.legal li{color:var(--fg-2);line-height:1.7}.legal ul{padding-left:20px}.legal a{color:var(--cyan)}
 /* ---------- contacto unificado ---------- */
 #contacto .ay-form{margin-top:8px}
 #contacto .ay-form h3{font-size:22px;margin:0 0 4px}
@@ -481,7 +499,6 @@ html{scroll-padding-top:90px}
       <li><a href="/habilidades/"><small>20</small>habilidades</a></li>
       <li><a href="/proyectos/"><small>30</small>proyectos</a></li>
       <li><a href="/trayectoria/"><small>40</small>trayectoria</a></li>
-      <li><a href="/#consola"><small>50</small>consola</a></li>
       <li><a href="/ayuda/"><small>60</small>ayuda</a></li>
     </ul>
     <span class="uptime" id="uptime">uptime ASIR: —</span>
@@ -497,7 +514,6 @@ html{scroll-padding-top:90px}
       <a style="--k:1" href="/habilidades/"><small>20</small>Habilidades</a>
       <a style="--k:2" href="/proyectos/"><small>30</small>Proyectos</a>
       <a style="--k:3" href="/trayectoria/"><small>40</small>Trayectoria</a>
-      <a style="--k:4" href="/#consola"><small>50</small>Consola</a>
       <a style="--k:5" href="/ayuda/"><small>60</small>Ayuda informática</a>
       <a style="--k:6" href="/contacto/" data-cur="1" class="on" aria-current="page"><small>99</small>Contacto</a>
       <div class="mnav-ctas" style="--k:7">
@@ -532,7 +548,7 @@ html{scroll-padding-top:90px}
         </label>
         <label>Cuéntame<textarea name="mensaje" rows="4" required></textarea></label>
         <input type="checkbox" name="botcheck" class="ay-hp" tabindex="-1" autocomplete="off">
-        <label class="ay-ok"><input type="checkbox" name="acepto" required> Acepto que Hugo use estos datos solo para contestarme.</label>
+        <label class="ay-ok"><input type="checkbox" name="acepto" required> Acepto que Hugo use estos datos solo para contestarme (<a href="/privacidad/">privacidad</a>).</label>
         <button class="btn pri" type="submit">Enviar</button>
         <p class="ay-msg" id="ay-msg" aria-live="polite"></p>
       </form>
@@ -551,7 +567,7 @@ html{scroll-padding-top:90px}
 <nav class="pager" aria-label="Otras secciones"><div class="wrap"><a class="pg-prev" href="/ayuda/"><small>← VLAN 60</small>Ayuda informática</a><a class="pg-next" href="/"><small>core →</small>Volver al mapa</a></div></nav>
 </main>
 
-<footer><div class="wrap"><span>© 2026 Hugo González García · Madrid</span><span>HUGO-R1 · todas las interfaces up</span></div></footer>
+<footer><div class="wrap"><span>© 2026 Hugo González García · Madrid</span><span><a href="/privacidad/">Privacidad y aviso legal</a> · HUGO-R1 · todas las interfaces up</span></div></footer>
 
 <script>
 (function(){
