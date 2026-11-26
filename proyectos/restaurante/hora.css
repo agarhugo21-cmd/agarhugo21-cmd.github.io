@@ -1,0 +1,48 @@
+#reloj{
+    padding: 30px 80px;
+    border-radius: 25px;
+    font-size: 60px;
+
+}
+
+.contenedor5{
+    margin: 300px auto;
+    border: 6px solid black;
+    border-radius: 20px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    max-width: 90%;
+
+}
+
+
+
+@media (max-width: 1300px){
+    .contenedor5{
+        margin: 150px auto;
+        height: 170px;
+    }
+    #reloj{
+        font-size: 45px;
+        padding: 20px 50px;
+    }
+}
+
+
+@media (max-width: 600px){
+    .contenedor5{
+        margin: 80px auto;
+        height: 130px;
+        border-width: 4px;
+    }
+    #reloj{
+        font-size: 32px;
+        padding: 15px 25px;
+    }
+}
+
+

@@ -1,0 +1,54 @@
+.merchandaising{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.clausu p{
+    text-align: center;
+}
+
+.clausu img{
+    height: 450px;
+    width: auto;
+    max-width: 100%;
+}
+
+.clausu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.anuncio{
+    text-align: center;
+    
+}
+
+
+
+@media (max-width: 1300px){
+    .clausu img{
+        height: 320px;
+    }
+}
+
+
+@media (max-width: 600px){
+    .merchandaising{
+        gap: 15px;
+        padding: 15px;
+    }
+    .clausu img{
+        height: auto;
+        width: 90%;
+        max-width: 400px;
+    }
+}

@@ -1,0 +1,45 @@
+.form1{
+    max-width: 500px;
+    width: 90%;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+ 
+ 
+ 
+.formopin{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+ 
+.formopin div{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+ 
+button{
+    padding: 10px;
+    cursor: pointer;
+}
+ 
+.valoracion{
+    display: block !important;
+}
+ 
+.valoracion label{
+    display: inline;
+    margin-right: 10px;
+}
+ 
+ 
+
+@media (max-width: 600px){
+    .form1{
+        padding: 15px;
+        margin: 25px auto;
+    }
+}
