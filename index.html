@@ -391,6 +391,12 @@ html{scroll-padding-top:90px}
 .page-top{padding-top:40px}
 .next-cta{padding-block:20px 90px;border-top:none}
 #pedir-ayuda{padding-top:20px;border-top:none}
+.ay-teaser{border-top:none}
+@media (max-width:1600px){.bar .uptime{display:none}}@media (max-width:1240px){.nav a small{display:none}}
+.pager{border-top:1px solid var(--line);padding-block:28px 56px}.pager .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.pager a{display:grid;gap:4px;padding:14px 18px;border:1px solid var(--line);border-radius:12px;background:var(--bg-2);color:var(--fg);text-decoration:none;font-weight:600;min-width:180px;transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s}
+.pager a small{font:500 11.5px var(--mono);color:var(--dim)}.pager .pg-next{text-align:right;margin-left:auto}
+.pager a:hover{border-color:var(--cyan-deep)}.pager .pg-prev:hover{transform:translateX(-4px)}.pager .pg-next:hover{transform:translateX(4px)}
 /* ---------- contacto unificado ---------- */
 #contacto .ay-form{margin-top:8px}
 #contacto .ay-form h3{font-size:22px;margin:0 0 4px}
@@ -465,32 +471,32 @@ html{scroll-padding-top:90px}
 
 <header class="bar" id="bar">
   <div class="wrap">
-    <a class="host" href="/"><span class="led blink"></span><span><b>HUGO-R1</b><span class="full">#</span></span></a>
+    <a class="host" href="#inicio"><span class="led blink"></span><span><b>HUGO-R1</b><span class="full">#</span></span></a>
     <ul class="nav" id="nav">
       <li class="nav-ind" aria-hidden="true"></li>
-      <li><a href="/#sobre-mi"><small>10</small>sobre mí</a></li>
-      <li><a href="/#habilidades"><small>20</small>habilidades</a></li>
+      <li><a href="/sobre-mi/"><small>10</small>sobre mí</a></li>
+      <li><a href="/habilidades/"><small>20</small>habilidades</a></li>
       <li><a href="/proyectos/"><small>30</small>proyectos</a></li>
-      <li><a href="/#trayectoria"><small>40</small>trayectoria</a></li>
-      <li><a href="/#consola"><small>50</small>consola</a></li>
+      <li><a href="/trayectoria/"><small>40</small>trayectoria</a></li>
+      <li><a href="/consola/"><small>50</small>consola</a></li>
       <li><a href="/ayuda/"><small>60</small>ayuda</a></li>
     </ul>
     <span class="uptime" id="uptime">uptime ASIR: —</span>
     <div class="bar-ctas">
-      <a class="bar-link" href="/#contacto">Contacto</a>
+      <a class="bar-link" href="#contacto">Contacto</a>
       <a class="cta-sm" href="/ayuda/">¿Necesitas ayuda informática?</a>
     </div>
     <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Abrir menú"><span></span><span></span><span></span></button>
   </div>
   <nav class="mnav" id="mnav" aria-label="Menú">
     <div class="mnav-in">
-      <a style="--k:0" href="/#sobre-mi"><small>10</small>Sobre mí</a>
-      <a style="--k:1" href="/#habilidades"><small>20</small>Habilidades</a>
+      <a style="--k:0" href="/sobre-mi/"><small>10</small>Sobre mí</a>
+      <a style="--k:1" href="/habilidades/"><small>20</small>Habilidades</a>
       <a style="--k:2" href="/proyectos/"><small>30</small>Proyectos</a>
-      <a style="--k:3" href="/#trayectoria"><small>40</small>Trayectoria</a>
-      <a style="--k:4" href="/#consola"><small>50</small>Consola</a>
+      <a style="--k:3" href="/trayectoria/"><small>40</small>Trayectoria</a>
+      <a style="--k:4" href="/consola/"><small>50</small>Consola</a>
       <a style="--k:5" href="/ayuda/"><small>60</small>Ayuda informática</a>
-      <a style="--k:6" href="/#contacto"><small>99</small>Contacto</a>
+      <a style="--k:6" href="#contacto"><small>99</small>Contacto</a>
       <div class="mnav-ctas" style="--k:7">
         <a class="cta-sm" href="/ayuda/">¿Necesitas ayuda informática?</a>
         <a class="bar-link" href="/CV-Hugo-Gonzalez-Garcia.pdf" download>Descargar CV ↓</a>
@@ -502,7 +508,7 @@ html{scroll-padding-top:90px}
 
 <main>
 <!-- ===================== PORTADA ===================== -->
-<section class="hero grid-bg" id="inicio" style="padding-block:0">
+<section class="hero grid-bg solo" id="inicio" style="padding-block:0">
   <div class="wrap">
     <div>
       <p class="boot rise">
@@ -514,9 +520,9 @@ html{scroll-padding-top:90px}
       <p class="role rise d2">Administración de Sistemas<i></i>Redes<i></i>Bases de datos</p>
       <p class="lede rise d3">Estudiante de ASIR en Madrid. Configuro redes Cisco, administro Windows Server y Linux, y diseño bases de datos que se mantienen solas. Fui finalista del ASTI Robotics Challenge 2026 con mi equipo.</p>
       <div class="hero-ctas rise d4">
-        <a class="btn pri" href="#proyectos">Ver proyectos <span aria-hidden="true">→</span></a>
+        <a class="btn pri" href="/proyectos/">Ver proyectos <span aria-hidden="true">→</span></a>
         <a class="btn" href="/CV-Hugo-Gonzalez-Garcia.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Descargar CV</a>
-        <a class="btn" href="#consola"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 17l6-5-6-5M12 19h8"/></svg>Abrir consola</a>
+        <a class="btn" href="/consola/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 17l6-5-6-5M12 19h8"/></svg>Abrir consola</a>
       </div>
       <p class="status rise d4"><span class="led"></span>Buscando prácticas en sistemas y redes · Madrid</p>
     </div>
@@ -527,123 +533,7 @@ html{scroll-padding-top:90px}
         <g id="pkts"></g>
         <g id="nodes"></g>
       </svg>
-      <p class="tip">↳ pulsa un equipo para ir a esa sección</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== SOBRE MÍ ===================== -->
-<section id="sobre-mi">
-  <div class="wrap">
-    <div class="sec-head"><span class="vlan">VLAN 10</span><span class="subnet">10.0.10.0/24 · sobre mí</span></div>
-    <h2>Me gusta entender cómo<br>funciona lo que hay detrás.</h2>
-    <div class="about">
-      <div class="about-txt">
-        <p>Estudio el <strong>Grado Superior en Administración de Sistemas Informáticos en Red</strong> en Digitech FP Madrid. Lo que más me engancha son <strong>las redes, los sistemas y las bases de datos</strong>: montar algo, romperlo en el laboratorio y volver a dejarlo funcionando.</p>
-        <p>Soy responsable, aprendo rápido y me adapto bien a entornos nuevos. En el <strong>ASTI Robotics Challenge</strong> pasé siete meses con mi equipo diseñando, programando y ajustando un robot hasta llegar a la final, y ahí aprendí tanto de trabajo en equipo como de técnica.</p>
-        <p>Ahora busco mi primera experiencia en una empresa para aplicar todo esto en sistemas reales.</p>
-        <div class="soft"><span>Trabajo en equipo</span><span>Comunicación</span><span>Autonomía</span><span>Liderazgo</span></div>
-      </div>
-      <div class="cli">
-        <div class="cli-top"><i></i><i></i><i></i><span>HUGO-R1# show version</span></div>
-<pre><span class="p">HUGO-R1#</span> <span class="w">show version</span>
-Hugo González García, versión <span class="w">ASIR 2.º curso</span>
-Compilado en Digitech FP Madrid (2025 – 2027)
-
-<span class="w">HUGO-R1 uptime</span> is <span class="a" id="uptime2">—</span>
-System image file is "<span class="w">bachillerato-ciencias.bin</span>"
-  (Colegio Paula Frassinetti, Avilés · 2019 – 2021)
-
-Idiomas      : Inglés <span class="w">B2</span>
-Ubicación    : Madrid
-Carnet       : B
-Logros       : <span class="a">Finalista ASTI Robotics Challenge 2026</span>
-Interfaces   : redes, sistemas, bases de datos, web
-
-Estado       : <span class="g">disponible para prácticas</span></pre>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== HABILIDADES ===================== -->
-<section id="habilidades" class="grid-bg" style="background-color:var(--bg)">
-  <div class="wrap">
-    <div class="sec-head"><span class="vlan">VLAN 20</span><span class="subnet">10.0.20.0/24 · habilidades</span></div>
-    <h2>show interfaces status</h2>
-    <p class="intro">Cada área es una interfaz. La señal indica el nivel con el que trabajo hoy en ella.</p>
-    <div class="ifs">
-      <div class="ifs-scroll">
-        <table class="if">
-          <thead><tr><th>Puerto</th><th>Área</th><th>Lo que sé hacer</th><th>Señal</th><th>Estado</th></tr></thead>
-          <tbody id="if-body"></tbody>
-        </table>
-      </div>
-    </div>
-    <div class="legend"><span>Señal: autoevaluación sobre 5</span><span><span class="led" style="margin-right:6px"></span>connected = lo uso con soltura en clase y proyectos</span></div>
-  </div>
-</section>
-
-<!-- ===================== PROYECTOS (resumen) ===================== -->
-<section id="proyectos">
-  <div class="wrap">
-    <div class="sec-head"><span class="vlan">VLAN 30</span><span class="subnet">10.0.30.0/24 · proyectos</span></div>
-    <h2>Proyectos</h2>
-    <p class="intro">Lo que he construido en clase y en competición. Cada uno tiene su ficha con fotos, código y detalles.</p>
-    <div class="pminis">
-      <a class="pmini" href="/proyectos/#p1" style="--i:0"><span class="pm-if">Gi0/1 · up/up · robótica · en equipo</span><h3>Robotics Masters</h3><span class="pm-chips"><i>Arduino</i><i>Python</i><i>Pygame</i></span><span class="pm-go" aria-hidden="true">→</span></a>
-      <a class="pmini" href="/proyectos/#p2" style="--i:1"><span class="pm-if">Gi0/2 · up/up · desarrollo web</span><h3>La Casa Antigua 1899</h3><span class="pm-chips"><i>HTML</i><i>CSS</i><i>JavaScript</i></span><span class="pm-go" aria-hidden="true">→</span></a>
-      <a class="pmini" href="/proyectos/#p3" style="--i:2"><span class="pm-if">Gi0/3 · up/up · bases de datos</span><h3>Triggers para una tienda</h3><span class="pm-chips"><i>MySQL</i><i>Triggers</i><i>SIGNAL</i></span><span class="pm-go" aria-hidden="true">→</span></a>
-      <a class="pmini" href="/proyectos/#p4" style="--i:3"><span class="pm-if">Gi0/4 · up/up · redes</span><h3>Proyecto final de redes</h3><span class="pm-chips"><i>Packet Tracer</i><i>Cisco IOS</i><i>Subnetting</i></span><span class="pm-go" aria-hidden="true">→</span></a>
-      <a class="pmini" href="/proyectos/#p5" style="--i:4"><span class="pm-if">Gi0/5 · up/up · sistemas</span><h3>Laboratorio de sistemas</h3><span class="pm-chips"><i>Windows Server</i><i>Active Directory</i><i>Linux</i></span><span class="pm-go" aria-hidden="true">→</span></a>
-    </div>
-    <a class="btn pri pm-all" href="/proyectos/">Ver todos los proyectos <span aria-hidden="true">→</span></a>
-  </div>
-</section>
-
-<!-- ===================== TRAYECTORIA ===================== -->
-<section id="trayectoria" class="grid-bg" style="background-color:var(--bg)">
-  <div class="wrap">
-    <div class="sec-head"><span class="vlan">VLAN 40</span><span class="subnet">10.0.40.0/24 · trayectoria</span></div>
-    <h2>traceroute futuro</h2>
-    <p class="intro">El camino hasta aquí, salto a salto. El último todavía no responde.</p>
-    <div class="trace">
-      <p class="trace-cmd"><b>HUGO-R1#</b> traceroute futuro.empresa.es</p>
-      <div class="hop"><span class="n">1</span><span class="t">2019 – 2021</span><div><h3>Bachillerato de Ciencias</h3><p class="where">Colegio Paula Frassinetti · Avilés</p></div></div>
-      <div class="hop"><span class="n">2</span><span class="t">2025 – 2027</span><div><h3>Grado Superior en ASIR</h3><p class="where">Digitech FP · Madrid</p><p>Redes Cisco, Windows Server, Linux, bases de datos MySQL y Oracle, y desarrollo web.</p></div></div>
-      <div class="hop"><span class="n">3</span><span class="t">nov 2025 – may 2026</span><div><h3>Finalista del ASTI Robotics Challenge</h3><p class="where">10.ª edición · equipo Robotics Masters</p><p>Siete meses de diseño 3D, montaje, programación y pruebas en pista hasta la final.</p></div></div>
-      <div class="hop"><span class="n">4</span><span class="t">may 2026</span><div><h3>Cierre de 1.º de ASIR</h3><p class="where">Proyectos finales</p><p>Web del restaurante, triggers en MySQL y proyecto final de redes en Packet Tracer.</p></div></div>
-      <div class="hop"><span class="n">5</span><span class="t">2026</span><div><h3>Ciberseguridad con Cisco Networking Academy</h3><p class="where">Formación complementaria</p><p>Introducción a la Ciberseguridad (completado) y Fundamentos de Ciberseguridad (en curso).</p></div></div>
-      <div class="hop star"><span class="n">6</span><span class="t">* * *</span><div><h3>Prácticas en empresa</h3><p class="where">Request timed out.</p><p>Este salto está esperando respuesta. Si tu empresa busca alguien para sistemas o redes, <a href="#contacto">puede ser el siguiente</a>.</p></div></div>
-    </div>
-
-    <div class="certs">
-      <div class="cert"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg></span><h3>Finalista ASTI Robotics Challenge</h3><p>10.ª edición · 2026</p><span class="ok"><span class="led"></span>conseguido</span></div>
-      <div class="cert"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/></svg></span><h3>Introducción a la Ciberseguridad</h3><p>Cisco Networking Academy</p><span class="ok"><span class="led"></span>completado</span><a href="https://www.credly.com/badges/9e4b54c9-1e8d-414b-a5e9-50c37e8c5df9" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;font:500 12.5px var(--mono);color:#47c6ff">Verificar en Credly ↗</a></div>
-      <div class="cert"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Fundamentos de Ciberseguridad</h3><p>Cisco Networking Academy</p><span class="ok wip"><span class="led amber blink"></span>en curso</span></div>
-      <div class="cert"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10l9-5 9 5-9 5-9-5z"/><path d="M7 12v5c3 2 7 2 10 0v-5"/></svg></span><h3>Grado Superior en ASIR</h3><p>Digitech FP Madrid</p><span class="ok wip"><span class="led amber blink"></span>en curso · 2027</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== CONSOLA ===================== -->
-<section id="consola">
-  <div class="wrap term-wrap">
-    <div>
-      <div class="sec-head"><span class="vlan">VLAN 50</span><span class="subnet">10.0.50.0/24 · consola</span></div>
-      <h2>¿Prefieres la línea de comandos?</h2>
-      <p class="intro">Todo el portfolio también se puede recorrer desde aquí. Escribe <span class="mono" style="color:var(--cyan)">help</span> o pulsa un comando. Funciona el tabulador para autocompletar y las flechas para el historial.</p>
-      <div class="quick" id="quick">
-        <button type="button">help</button><button type="button">whoami</button><button type="button">show ip interface brief</button><button type="button">proyectos</button><button type="button">ping hugo</button><button type="button">sudo contratar</button>
-      </div>
-    </div>
-    <div class="term">
-      <div class="cli-top"><i></i><i></i><i></i><span>ssh invitado@hugo-r1</span></div>
-      <div class="screen" id="screen" aria-live="polite"></div>
-      <form class="prompt-row" id="prompt" autocomplete="off">
-        <label for="cmd">invitado@HUGO-R1:~$</label>
-        <input id="cmd" name="cmd" type="text" spellcheck="false" autocapitalize="off" aria-label="Escribe un comando">
-      </form>
+      <p class="tip">↳ pulsa un equipo para abrir su página</p>
     </div>
   </div>
 </section>
@@ -739,7 +629,8 @@ var N=[
   {id:'proyectos',x:458,y:262,t:'Proyectos',s:'VLAN 30'},
   {id:'trayectoria',x:392,y:420,t:'Trayectoria',s:'VLAN 40'},
   {id:'consola',x:128,y:420,t:'Consola',s:'VLAN 50'},
-  {id:'contacto',x:62,y:262,t:'Contacto',s:'VLAN 99'}
+  {id:'contacto',x:62,y:262,t:'Contacto',s:'VLAN 99'},
+  {id:'ayuda',x:260,y:62,t:'Ayuda',s:'VLAN 60'}
 ];
 var gL=$('#links'),gP=$('#pkts'),gN=$('#nodes');
 function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e;}
@@ -752,7 +643,7 @@ function drawNode(n,isCore){
   var t=el('text',{x:14,y:isCore?34:24,'class':'ttl'});t.textContent=n.t;g.appendChild(t);
   var s=el('text',{x:14,y:isCore?52:40,'class':'sub'});s.textContent=n.s;g.appendChild(s);
   if(!isCore){g.setAttribute('tabindex','0');g.setAttribute('role','link');g.setAttribute('aria-label','Ir a '+n.t);
-    var go=function(){burst(n);setTimeout(function(){var d=document.getElementById(n.id);if(d)d.scrollIntoView({behavior:reduce?'auto':'smooth'});},reduce?0:380);};
+    var go=function(){burst(n);setTimeout(function(){var d=document.getElementById(n.id);if(d&&n.id==='contacto')d.scrollIntoView({behavior:reduce?'auto':'smooth'});else location.href='/'+n.id+'/';},reduce?0:380);};
     g.addEventListener('click',go);g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
     g.addEventListener('mouseenter',function(){lines[n.id].classList.add('hot');});
     g.addEventListener('mouseleave',function(){lines[n.id].classList.remove('hot');});}
@@ -819,7 +710,7 @@ if('IntersectionObserver' in window){new IntersectionObserver(function(es,o){if(
 var scr=$('#screen'),inp=$('#cmd'),form=$('#prompt'),hist=[],hi=0;
 function out(h,cls){var d=document.createElement('div');d.className='ln'+(cls?' '+cls:'');d.innerHTML=h;scr.appendChild(d);scr.scrollTop=scr.scrollHeight;}
 function echo(c){out('<span class="c">invitado@HUGO-R1:~$</span> <span class="w">'+esc(c)+'</span>');}
-function go(id,label){out('<span class="d">→ abriendo '+label+'…</span>');setTimeout(function(){var d=document.getElementById(id);if(d)d.scrollIntoView({behavior:reduce?'auto':'smooth'});else location.href=(id==='proyectos'?'/proyectos/':id==='ayuda'?'/ayuda/':'/#'+id);},350);}
+function go(id,label){out('<span class="d">→ abriendo '+label+'…</span>');setTimeout(function(){var d=document.getElementById(id);if(d)d.scrollIntoView({behavior:reduce?'auto':'smooth'});else location.href='/'+id+'/';},350);}
 var C={
   help:function(){out([
     '<span class="w">Comandos disponibles</span>',
