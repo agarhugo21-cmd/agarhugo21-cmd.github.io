@@ -392,6 +392,9 @@ html{scroll-padding-top:90px}
 .next-cta{padding-block:20px 90px;border-top:none}
 #pedir-ayuda{padding-top:20px;border-top:none}
 .ay-teaser{border-top:none}
+@media (prefers-reduced-motion:no-preference){@view-transition{navigation:auto}.bar{view-transition-name:bar}::view-transition-old(root){animation:vt-out .26s cubic-bezier(.4,0,1,1) both}::view-transition-new(root){animation:vt-in .45s cubic-bezier(.2,.8,.2,1) both}}
+@keyframes vt-out{to{opacity:0;transform:translateY(-12px);filter:blur(4px)}}@keyframes vt-in{from{opacity:0;transform:translateY(24px);filter:blur(6px)}}
+.pj,.ay-card,.cc,.pager a{background-image:radial-gradient(380px circle at var(--mx,-999px) var(--my,-999px),rgba(71,198,255,.10),transparent 60%)}
 @media (max-width:1600px){.bar .uptime{display:none}}@media (max-width:1240px){.nav a small{display:none}}
 .pager{border-top:1px solid var(--line);padding-block:28px 56px}.pager .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .pager a{display:grid;gap:4px;padding:14px 18px;border:1px solid var(--line);border-radius:12px;background:var(--bg-2);color:var(--fg);text-decoration:none;font-weight:600;min-width:180px;transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s}
@@ -684,7 +687,7 @@ var C={
   'sudo contratar':function(){out('[sudo] contraseña para reclutador: ********');setTimeout(function(){out('<span class="g">Acceso concedido.</span> Buena decisión.');go('contacto','contacto');},reduce?0:600);},
   sudo:function(){out('<span class="r">Uso:</span> sudo contratar');},
   clear:function(){scr.innerHTML='';},
-  ls:function(){out('<span class="c">sobre-mi/</span>  <span class="c">habilidades/</span>  <span class="c">proyectos/</span>  <span class="c">trayectoria/</span>  <span class="c">contacto/</span>  cv.txt');},
+  ls:function(){out('<span class="c">sobre-mi/</span>  <span class="c">habilidades/</span>  <span class="c">proyectos/</span>  <span class="c">trayectoria/</span>  <span class="c">ayuda/</span>  <span class="c">contacto/</span>  cv.txt');},
   'cat cv.txt':function(){C.whoami();C.certificaciones();},
   date:function(){out(new Date().toLocaleString('es-ES'));},
   exit:function(){out('<span class="d">Connection to hugo-r1 closed… es broma, sigue mirando.</span>');},
@@ -693,7 +696,7 @@ var C={
 };
 C['sobre-mi']=function(){go('sobre-mi','sobre mí');};C.about=C['sobre-mi'];C.skills=C['show ip interface brief'];C.habilidades=C.skills;
 C.trayectoria=C.traceroute;C.cv=C['cat cv.txt'];C['show run']=C['show running-config'];C['sh ip int br']=C['show ip interface brief'];C.ping=C['ping hugo'];
-var PJ=[function(){openDlg('asti');},function(){window.open(REST_URL,'_blank','noopener');out('<span class="d">Si no se abre:</span> <a href="'+REST_URL+'" target="_blank" rel="noopener">abrir la web del restaurante</a>');},function(){openDlg('sql');},function(){go('proyectos','proyectos');},function(){go('proyectos','proyectos');}];
+var PJ=[function(){openDlg('asti');},function(){window.open(REST_URL,'_blank','noopener');out('<span class="d">Si no se abre:</span> <a href="'+REST_URL+'" target="_blank" rel="noopener">abrir la web del restaurante</a>');},function(){openDlg('sql');},function(){out('<span class="d">→ abriendo proyectos…</span>');location.href='/proyectos/#p4';},function(){location.href='/proyectos/#p5';}];
 function run(raw){var c=raw.trim().replace(/\s+/g,' ');echo(c);if(!c)return;var l=c.toLowerCase();
   if(c){hist.push(c);hi=hist.length;}
   var m=l.match(/^proyecto\s+(\d)$/);
@@ -788,6 +791,20 @@ try{var ab=new URLSearchParams(location.search).get('abrir');if(ab&&document.get
   btn.addEventListener("mouseenter",function(){clearTimeout(tm);if(getComputedStyle(btn).display!=="none")open(true);});
   mnav.addEventListener("mouseenter",function(){clearTimeout(tm);});
   bar.addEventListener("mouseleave",function(){tm=setTimeout(function(){open(false);},250);});
+})();
+</script>
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(matchMedia('(hover:hover) and (pointer:fine)').matches){
+    document.addEventListener('pointermove',function(e){var c=e.target.closest&&e.target.closest('.pj,.ay-card,.cc,.pager a');if(!c)return;var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');},{passive:true});
+  }
+  var h=document.querySelector('.ay-h1');if(!h||reduce)return;
+  h.setAttribute('aria-label',h.innerHTML.replace(/<br\s*\/?>/g,' ').replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim());
+  var G='01<>/\\{}[]#=+*_-',nodes=[];
+  (function walk(n){[].forEach.call(n.childNodes,function(c){if(c.nodeType===3&&c.nodeValue.trim())nodes.push({n:c,t:c.nodeValue,d:[].map.call(c.nodeValue,function(){return 4+Math.random()*26|0;})});else if(c.nodeType===1)walk(c);});})(h);
+  var f=0;(function step(){f++;var done=true;nodes.forEach(function(o){var s='';for(var i=0;i<o.t.length;i++){var ch=o.t[i];if(ch===' '||ch==='\n'||f>=o.d[i])s+=ch;else{s+=G[Math.random()*G.length|0];done=false;}}o.n.nodeValue=s;});if(!done)setTimeout(step,30);})();
+  setTimeout(function(){nodes.forEach(function(o){o.n.nodeValue=o.t;});},2000);
 })();
 </script>
 </body>
