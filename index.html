@@ -396,7 +396,7 @@ Estado       : <span class="g">disponible para prácticas</span></pre>
     <div class="pjs">
       <article class="pj wide">
         <div class="media">
-          <img src="img/asti-01.jpg" alt="Portada de la presentación del equipo Robotics Masters">
+          <img src="asti-01.jpg" alt="Portada de la presentación del equipo Robotics Masters">
           <span class="badge"><span class="led amber"></span>Finalista 2026</span>
         </div>
         <div class="bd">
@@ -416,7 +416,7 @@ Estado       : <span class="g">disponible para prácticas</span></pre>
 
       <article class="pj">
         <div class="media">
-          <img src="img/rest-hero.jpg" alt="Plato de la carta de La Casa Antigua 1899">
+          <img src="rest-hero.jpg" alt="Plato de la carta de La Casa Antigua 1899">
           <span class="badge"><span class="led amber"></span>Proyecto final</span>
         </div>
         <div class="bd">
@@ -577,7 +577,7 @@ Estado       : <span class="g">disponible para prácticas</span></pre>
 <dialog id="dlg-asti" aria-label="Presentación Robotics Masters">
   <div class="vw">
     <header><span>Robotics Masters · ASTI Robotics Challenge</span><button class="x" type="button" data-close>Cerrar ✕</button></header>
-    <img id="slide" src="img/asti-01.jpg" alt="Diapositiva de la presentación Robotics Masters">
+    <img id="slide" src="asti-01.jpg" alt="Diapositiva de la presentación Robotics Masters">
     <div class="ft"><button class="btn" type="button" id="prev">← Anterior</button><span class="k" id="count">1 / 20</span><button class="btn pri" type="button" id="next">Siguiente →</button></div>
     <div class="thumbs" id="thumbs"></div>
   </div>
@@ -751,8 +751,8 @@ if('IntersectionObserver' in window){
 var S=20,k=0,img=$('#slide'),cnt=$('#count'),th=$('#thumbs');
 function pad(n){return String(n).padStart(2,'0');}
 for(var i=1;i<=S;i++){(function(i){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Diapositiva '+i);
-  b.innerHTML='<img src="img/asti-'+pad(i)+'.jpg" alt="" loading="lazy">';b.onclick=function(){k=i-1;show();};th.appendChild(b);})(i);}
-function show(){img.src='img/asti-'+pad(k+1)+'.jpg';cnt.textContent=(k+1)+' / '+S;
+  b.innerHTML='<img src="asti-'+pad(i)+'.jpg" alt="" loading="lazy">';b.onclick=function(){k=i-1;show();};th.appendChild(b);})(i);}
+function show(){img.src='asti-'+pad(k+1)+'.jpg';cnt.textContent=(k+1)+' / '+S;
   [].forEach.call(th.children,function(b,j){b.classList.toggle('on',j===k);if(j===k&&b.scrollIntoView)b.scrollIntoView({block:'nearest',inline:'center'});});}
 $('#prev').onclick=function(){k=(k+S-1)%S;show();};
 $('#next').onclick=function(){k=(k+1)%S;show();};
