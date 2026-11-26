@@ -332,6 +332,43 @@ html{scroll-padding-top:90px}
 @media (max-width:1280px){.uptime{display:none}}
 @media (max-width:1060px){.bar .nav{display:none}.menu-btn{display:flex}}
 @media (max-width:420px){.cta-sm{display:none}}
+/* ---------- menú v3: más vivo ---------- */
+.bar{transition:background .4s ease,box-shadow .4s ease,border-color .4s ease,transform .4s cubic-bezier(.2,.8,.2,1)}
+.bar .host .led{transition:transform .3s}.bar .host:hover .led{transform:scale(1.4)}
+.nav{position:relative;align-items:center}
+.nav li{position:relative;z-index:1}
+.nav li.nav-ind{position:absolute;z-index:0;top:0;left:0;height:100%;width:0;border-radius:8px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line-2);opacity:0;pointer-events:none;transition:transform .45s cubic-bezier(.2,.8,.2,1),width .45s cubic-bezier(.2,.8,.2,1),opacity .3s ease}
+.nav a{position:relative;transition:color .3s ease}
+.nav a:hover,.nav a.on{background:transparent;color:var(--fg)}
+.nav a small{transition:color .3s ease}.nav a:hover small,.nav a.on small{color:var(--cyan)}
+.bar-ctas{display:flex;align-items:center;gap:14px}
+.bar-link{position:relative;font:500 13px var(--mono);color:var(--fg-2);text-decoration:none;padding:6px 2px;white-space:nowrap;transition:color .3s}
+.bar-link::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--cyan);transform:scaleX(0);transform-origin:right;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.bar-link:hover{color:var(--fg)}.bar-link:hover::after{transform:scaleX(1);transform-origin:left}
+.cta-sm{position:relative;overflow:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,background .3s}
+.cta-sm:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(255,181,71,.28)}
+.mnav{display:grid!important;grid-template-rows:0fr;padding:0;border-top:1px solid transparent;animation:none!important;transition:grid-template-rows .5s cubic-bezier(.2,.8,.2,1),border-color .4s}
+.mnav.open{grid-template-rows:1fr;border-top-color:var(--line)}
+.mnav-in{min-height:0;overflow:hidden;display:grid;gap:2px;padding:0 10px;transition:padding .5s cubic-bezier(.2,.8,.2,1)}
+.mnav.open .mnav-in{padding:8px 10px 14px}
+.mnav a,.mnav-ctas{opacity:0;transform:translateY(-8px);transition:opacity .35s ease,transform .45s cubic-bezier(.2,.8,.2,1),background .25s,color .25s}
+.mnav.open a,.mnav.open .mnav-ctas{opacity:1;transform:none;transition-delay:calc(var(--k,0) * 45ms + 80ms),calc(var(--k,0) * 45ms + 80ms),0s,0s}
+.mnav a:hover{padding-left:18px}
+.mnav a{transition-property:opacity,transform,background,color,padding}
+.mnav-ctas{display:flex;flex-wrap:wrap;align-items:center;gap:16px;padding:12px 12px 2px;border-top:1px solid var(--line);margin-top:6px}
+.mnav .cta-sm{display:inline-block;padding:9px 14px;font:600 13px var(--mono);color:var(--bg)}.mnav .cta-sm:hover{color:var(--bg);padding-left:14px}.mnav-ctas .bar-link{display:inline-block;padding:6px 2px;font:500 13px var(--mono)}.mnav-ctas .bar-link:hover{padding-left:2px}
+
+@media (max-width:1060px){.bar-ctas .bar-link{display:none}.bar-ctas{margin-left:auto}}
+@media (max-width:640px){.bar-ctas{display:none}}
+@media (max-width:420px){.cta-sm{display:inline-block}}
+@media (prefers-reduced-motion:no-preference){
+  .nav li:not(.nav-ind){animation:navin .6s cubic-bezier(.2,.8,.2,1) both}
+  .nav li:nth-child(2){animation-delay:.05s}.nav li:nth-child(3){animation-delay:.1s}.nav li:nth-child(4){animation-delay:.15s}.nav li:nth-child(5){animation-delay:.2s}.nav li:nth-child(6){animation-delay:.25s}.nav li:nth-child(7){animation-delay:.3s}
+  .bar-ctas{animation:navin .6s .35s cubic-bezier(.2,.8,.2,1) both}
+  @keyframes navin{from{opacity:0;transform:translateY(-8px)}}
+  .cta-sm::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.55) 50%,transparent 65%);transform:translateX(-120%);animation:shine 4.5s ease-in-out 1.5s infinite}
+  @keyframes shine{0%,70%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+}
 /* ---------- contacto unificado ---------- */
 #contacto .ay-form{margin-top:8px}
 #contacto .ay-form h3{font-size:22px;margin:0 0 4px}
@@ -408,6 +445,7 @@ html{scroll-padding-top:90px}
   <div class="wrap">
     <a class="host" href="#inicio"><span class="led blink"></span><span><b>HUGO-R1</b><span class="full">#</span></span></a>
     <ul class="nav" id="nav">
+      <li class="nav-ind" aria-hidden="true"></li>
       <li><a href="#sobre-mi"><small>10</small>sobre mí</a></li>
       <li><a href="#habilidades"><small>20</small>habilidades</a></li>
       <li><a href="#proyectos"><small>30</small>proyectos</a></li>
@@ -416,18 +454,26 @@ html{scroll-padding-top:90px}
       <li><a href="#ayuda"><small>60</small>ayuda</a></li>
     </ul>
     <span class="uptime" id="uptime">uptime ASIR: —</span>
-    <a class="cta-sm" href="#contacto">Contacto</a>
+    <div class="bar-ctas">
+      <a class="bar-link" href="#contacto">Contacto</a>
+      <a class="cta-sm" href="#ayuda">¿Necesitas ayuda informática?</a>
+    </div>
     <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Abrir menú"><span></span><span></span><span></span></button>
   </div>
   <nav class="mnav" id="mnav" aria-label="Menú">
-    <a href="#sobre-mi"><small>10</small>Sobre mí</a>
-    <a href="#habilidades"><small>20</small>Habilidades</a>
-    <a href="#proyectos"><small>30</small>Proyectos</a>
-    <a href="#trayectoria"><small>40</small>Trayectoria</a>
-    <a href="#consola"><small>50</small>Consola</a>
-    <a href="#ayuda"><small>60</small>Ayuda informática</a>
-    <a href="#contacto"><small>99</small>Contacto</a>
-    <a href="CV-Hugo-Gonzalez-Garcia.pdf" download><small>↓</small>Descargar CV</a>
+    <div class="mnav-in">
+      <a style="--k:0" href="#sobre-mi"><small>10</small>Sobre mí</a>
+      <a style="--k:1" href="#habilidades"><small>20</small>Habilidades</a>
+      <a style="--k:2" href="#proyectos"><small>30</small>Proyectos</a>
+      <a style="--k:3" href="#trayectoria"><small>40</small>Trayectoria</a>
+      <a style="--k:4" href="#consola"><small>50</small>Consola</a>
+      <a style="--k:5" href="#ayuda"><small>60</small>Ayuda informática</a>
+      <a style="--k:6" href="#contacto"><small>99</small>Contacto</a>
+      <div class="mnav-ctas" style="--k:7">
+        <a class="cta-sm" href="#ayuda">¿Necesitas ayuda informática?</a>
+        <a class="bar-link" href="CV-Hugo-Gonzalez-Garcia.pdf" download>Descargar CV ↓</a>
+      </div>
+    </div>
   </nav>
   <div class="progress" id="progress" aria-hidden="true"></div>
 </header>
@@ -723,7 +769,7 @@ Estado       : <span class="g">disponible para prácticas</span></pre>
       <h3>Cómo funciona</h3>
       <ol>
         <li><b>Me escribes o me llamas</b> y me cuentas qué te pasa. No hace falta saber explicarlo con palabras técnicas.</li>
-        <li><b>Quedamos un momento</b> por teléfono o videollamada. Si hace falta, me conecto a tu ordenador con <b>AnyDesk</b>: te explico paso a paso cómo instalarlo.</li>
+        <li><b>Quedamos un momento</b> por teléfono o por videollamada (WhatsApp, Teams, Google Meet… la que te resulte más cómoda). Si hace falta, me conecto a tu ordenador con <b>TeamViewer</b> o <b>Supremo</b>: te explico paso a paso cómo instalarlo.</li>
         <li><b>Lo resolvemos juntos</b> y te explico cómo hacerlo tú la próxima vez.</li>
       </ol>
       <p class="ay-when">No tengo horario fijo: escríbeme y te digo cuándo puedo atenderte.</p>
@@ -1115,6 +1161,27 @@ out('Bienvenido. Escribe <span class="c">help</span> para ver los comandos.');
   var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target;el.classList.add('in');ro.unobserve(el);
     setTimeout(function(){el.classList.remove('rv','in');el.style.removeProperty('--i');},1400);}});},{rootMargin:'0px 0px -8% 0px'});
   els.forEach(function(el){ro.observe(el);});
+})();
+
+/* ---------- menú v3: indicador deslizante y apertura al pasar el ratón ---------- */
+(function(){
+  var nav=document.getElementById("nav"),ind=nav&&nav.querySelector(".nav-ind");
+  if(ind){
+    var links=[].slice.call(nav.querySelectorAll("a"));
+    function go(a){if(!a){ind.style.opacity=0;return;}ind.style.width=a.offsetWidth+"px";ind.style.transform="translateX("+a.offsetLeft+"px)";ind.style.opacity=1;}
+    function active(){return nav.querySelector("a.on");}
+    links.forEach(function(a){a.addEventListener("mouseenter",function(){go(a);});a.addEventListener("focus",function(){go(a);});});
+    nav.addEventListener("mouseleave",function(){go(active());});
+    new MutationObserver(function(){if(!nav.matches(":hover"))go(active());}).observe(nav,{subtree:true,attributes:true,attributeFilter:["class"]});
+    window.addEventListener("resize",function(){go(active());});
+  }
+  var bar=document.getElementById("bar"),btn=document.getElementById("menu-btn"),mnav=document.getElementById("mnav");
+  if(!bar||!btn||!mnav||!window.matchMedia("(hover:hover) and (pointer:fine)").matches)return;
+  var tm;
+  function open(o){btn.setAttribute("aria-expanded",o);btn.setAttribute("aria-label",o?"Cerrar menú":"Abrir menú");mnav.classList.toggle("open",o);}
+  btn.addEventListener("mouseenter",function(){clearTimeout(tm);if(getComputedStyle(btn).display!=="none")open(true);});
+  mnav.addEventListener("mouseenter",function(){clearTimeout(tm);});
+  bar.addEventListener("mouseleave",function(){tm=setTimeout(function(){open(false);},250);});
 })();
 </script>
 </body>
