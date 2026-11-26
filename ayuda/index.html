@@ -478,7 +478,7 @@ html{scroll-padding-top:90px}
       <li><a href="/habilidades/"><small>20</small>habilidades</a></li>
       <li><a href="/proyectos/"><small>30</small>proyectos</a></li>
       <li><a href="/trayectoria/"><small>40</small>trayectoria</a></li>
-      <li><a href="/consola/"><small>50</small>consola</a></li>
+      <li><a href="/#consola"><small>50</small>consola</a></li>
       <li><a href="/ayuda/" data-cur="1" class="on" aria-current="page"><small>60</small>ayuda</a></li>
     </ul>
     <span class="uptime" id="uptime">uptime ASIR: —</span>
@@ -494,7 +494,7 @@ html{scroll-padding-top:90px}
       <a style="--k:1" href="/habilidades/"><small>20</small>Habilidades</a>
       <a style="--k:2" href="/proyectos/"><small>30</small>Proyectos</a>
       <a style="--k:3" href="/trayectoria/"><small>40</small>Trayectoria</a>
-      <a style="--k:4" href="/consola/"><small>50</small>Consola</a>
+      <a style="--k:4" href="/#consola"><small>50</small>Consola</a>
       <a style="--k:5" href="/ayuda/" data-cur="1" class="on" aria-current="page"><small>60</small>Ayuda informática</a>
       <a style="--k:6" href="/contacto/"><small>99</small>Contacto</a>
       <div class="mnav-ctas" style="--k:7">
@@ -567,7 +567,7 @@ html{scroll-padding-top:90px}
 </section>
 
 
-<nav class="pager" aria-label="Otras secciones"><div class="wrap"><a class="pg-prev" href="/consola/"><small>← VLAN 50</small>Consola</a><a class="pg-next" href="/contacto/"><small>VLAN 99 →</small>Contacto</a></div></nav>
+<nav class="pager" aria-label="Otras secciones"><div class="wrap"><a class="pg-prev" href="/trayectoria/"><small>← VLAN 40</small>Trayectoria</a><a class="pg-next" href="/contacto/"><small>VLAN 99 →</small>Contacto</a></div></nav>
 
 <section id="pedir-ayuda" class="ay">
   <div class="wrap">
@@ -659,7 +659,7 @@ function drawNode(n,isCore){
   var t=el('text',{x:14,y:isCore?34:24,'class':'ttl'});t.textContent=n.t;g.appendChild(t);
   var s=el('text',{x:14,y:isCore?52:40,'class':'sub'});s.textContent=n.s;g.appendChild(s);
   if(!isCore){g.setAttribute('tabindex','0');g.setAttribute('role','link');g.setAttribute('aria-label','Ir a '+n.t);
-    var go=function(){burst(n);setTimeout(function(){var d=document.getElementById(n.id);if(d&&n.id==='contacto')d.scrollIntoView({behavior:reduce?'auto':'smooth'});else location.href='/'+n.id+'/';},reduce?0:380);};
+    var go=function(){burst(n);setTimeout(function(){var d=document.getElementById(n.id);if(d&&(n.id==='contacto'||n.id==='consola'))d.scrollIntoView({behavior:reduce?'auto':'smooth'});else location.href='/'+n.id+'/';},reduce?0:380);};
     g.addEventListener('click',go);g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
     g.addEventListener('mouseenter',function(){lines[n.id].classList.add('hot');});
     g.addEventListener('mouseleave',function(){lines[n.id].classList.remove('hot');});}
@@ -726,7 +726,7 @@ if('IntersectionObserver' in window){new IntersectionObserver(function(es,o){if(
 var scr=$('#screen'),inp=$('#cmd'),form=$('#prompt'),hist=[],hi=0;
 function out(h,cls){var d=document.createElement('div');d.className='ln'+(cls?' '+cls:'');d.innerHTML=h;scr.appendChild(d);scr.scrollTop=scr.scrollHeight;}
 function echo(c){out('<span class="c">invitado@HUGO-R1:~$</span> <span class="w">'+esc(c)+'</span>');}
-function go(id,label){out('<span class="d">→ abriendo '+label+'…</span>');setTimeout(function(){var d=document.getElementById(id);if(d)d.scrollIntoView({behavior:reduce?'auto':'smooth'});else location.href='/'+id+'/';},350);}
+function go(id,label){out('<span class="d">→ abriendo '+label+'…</span>');setTimeout(function(){var d=document.getElementById(id);if(d)d.scrollIntoView({behavior:reduce?'auto':'smooth'});else location.href=(id==='consola'?'/#consola':'/'+id+'/');},350);}
 var C={
   help:function(){out([
     '<span class="w">Comandos disponibles</span>',
