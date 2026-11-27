@@ -9,7 +9,8 @@
   --line:#1e2a3a;
   --line-2:#2a3a50;
   --fg:#e6edf5;
-  --fg-2:#a9b6c6;
+  --fg-2:#b5c1ce;
+  --surface-alt:#172331;
   --dim:#7d8ca2;
   --cyan:#47c6ff;
   --cyan-deep:#1a5a7a;
@@ -419,7 +420,7 @@ footer a{color:inherit;text-decoration:underline;text-underline-offset:3px}foote
 .ay-ia ul{columns:2;column-gap:40px}
 .ay-ia li{break-inside:avoid}
 .nav a{white-space:nowrap}
-.ay-note{margin:12px 0 0;color:var(--cyan);font-size:16px}
+.ay-note{margin:12px 0 0;color:var(--fg);font-size:16px;padding-left:12px;border-left:2px solid var(--cyan)}
 .ay-ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:#122233;color:var(--cyan);flex:none}
 .ay-ic svg{width:24px;height:24px}
 .ay-biz{margin-top:22px;color:var(--fg-2);line-height:1.6}
@@ -479,7 +480,7 @@ table.if .ev a{color:var(--cyan)}
 .lt-svg line.ser{stroke:var(--amber);stroke-dasharray:6 4}
 .lt-svg .d circle,.lt-svg .d rect,.lt-svg .d path{fill:#132233;stroke:var(--cyan);stroke-width:1.6}
 .lt-svg .d.pc rect,.lt-svg .d.pc path,.lt-svg .d.laptop rect,.lt-svg .d.laptop path{stroke:var(--fg-2)}
-.lt-svg .d.server rect,.lt-svg .d.server path{stroke:var(--up)}
+.lt-svg .d.server rect,.lt-svg .d.server path{stroke:var(--fg-2)}
 .lt-svg .d.asa path{stroke:var(--down)}
 .lt-svg circle.iot{fill:var(--amber);stroke:none}
 .lt-svg text{fill:var(--fg-2);font:500 11px var(--mono);text-anchor:middle}
@@ -534,15 +535,10 @@ table.if .ev a{color:var(--cyan)}
 @media (max-width:600px){
   .hero-ctas .btn,.cta-box .btn,.pj .acts .btn,.lab .acts .btn,.labs-sec .acts>.btn,.ay-form .btn,.fi-col .acts .btn,.lab-info .acts .btn{width:100%;justify-content:center;min-height:48px}
 }
-/* Ayuda: más cálida y sencilla */
-.pg-ayuda .ay .ay-lead{font-size:20px;color:#c2ccd6}
-.pg-ayuda .ay-card{background:#17232e;border-color:#22303f}
-.pg-ayuda .ay-card h3{color:#f5f7fa;font-size:22px}
-.pg-ayuda .ay-card ul{color:#c2ccd6;font-size:18px}
-.pg-ayuda .ay-card .ay-ic{background:rgba(98,217,155,.12);color:#62d99b}
-.pg-ayuda .ay-card:hover{border-color:rgba(98,217,155,.55)}
-.pg-ayuda .ay-ia,.pg-ayuda .ay-bots{border-color:rgba(98,217,155,.35)}
-.pg-ayuda .ay-note{color:#62d99b}
+/* Ayuda: más cálida y sencilla (el verde queda solo para estados reales) */
+.pg-ayuda .ay .ay-lead{font-size:20px;color:var(--fg-2)}
+.pg-ayuda .ay-card{background:var(--surface-alt);border-color:#22303f}
+.pg-ayuda .ay-card h3{color:var(--fg);font-size:22px}
+.pg-ayuda .ay-card ul{color:var(--fg-2);font-size:18px}
 .pg-ayuda .ay-btn{min-height:60px;font-size:20px}
-.pg-ayuda .ay-how ol,.pg-ayuda .ay-biz{color:#c2ccd6}
-.pg-ayuda .bot-cols ul{font-size:16px;color:#c2ccd6}
+.pg-ayuda .bot-cols ul{font-size:16px}
