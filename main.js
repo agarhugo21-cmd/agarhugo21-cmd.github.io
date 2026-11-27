@@ -15,7 +15,7 @@ tick();setInterval(tick,30000);
 
 /* ---------- habilidades (niveles tomados de su CV en Notion) ---------- */
 var IFS=[
-  ['Gi0/1','Redes',['Packet Tracer','Cisco IOS','RIP','OSPF','EIGRP','VLAN e inter-VLAN','TCP/IP','Subnetting'],5,[['Proyecto final de redes','/proyectos/#p4']]],
+  ['Gi0/1','Redes',['Packet Tracer','Cisco IOS','RIP','OSPF','EIGRP','VLAN e inter-VLAN','TCP/IP','Subnetting'],5,[['Proyecto final de redes','/proyectos/#p4'],['Laboratorios de Packet Tracer','/proyectos/#laboratorios']]],
   ['Gi0/2','Hardware',['Montaje de equipos','Mantenimiento'],5],
   ['Gi0/3','Sistemas',['Windows Server','Active Directory','Linux','Usuarios y permisos'],4,[['Laboratorio de sistemas','/proyectos/#p5']]],
   ['Gi0/4','Servicios',['DHCP','DNS','Servidor web'],4,[['Laboratorio de sistemas','/proyectos/#p5']]],
