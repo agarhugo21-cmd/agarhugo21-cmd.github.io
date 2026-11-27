@@ -21,7 +21,7 @@ var IFS=[
   ['Gi0/4','Servicios',['DHCP','DNS','Servidor web'],'labs',[['Laboratorio de sistemas','/proyectos/#p5']]],
   ['Gi0/5','Virtualización',['VirtualBox','VMware'],'labs',[['Laboratorio de sistemas','/proyectos/#p5']]],
   ['Gi0/6','Bases de datos',['MySQL','Oracle','MySQL Workbench','Triggers'],'labs',[['Triggers para una tienda','/proyectos/#p3']]],
-  ['Gi0/7','Desarrollo',['HTML','CSS','JavaScript','Python','Arduino'],'labs',[['La Casa Antigua 1899','/proyectos/#p2'],['Robotics Masters','/proyectos/#p1'],['Bots de Discord y Telegram','/proyectos/#p6']]],
+  ['Gi0/7','Desarrollo',['HTML','CSS','JavaScript','Python','Arduino'],'labs',[['La Casa Antigua 1899','/proyectos/#p2'],['Robotics Masters','/proyectos/#p1'],['Bots de Discord y Telegram (servicio gratuito)','/ayuda/#bots']]],
   ['Gi0/8','Ciberseguridad',['VPN IPsec','Cisco ASA','RADIUS / AAA','Port security'],'labs',[['Laboratorios de ciberseguridad','/proyectos/#laboratorios']]],
   ['Gi0/9','Idiomas',['Inglés B2'],'b2']
 ];
@@ -139,7 +139,7 @@ var C={
   'show version':function(){out('Hugo González García, versión <span class="w">ASIR 2.º curso</span>\nuptime is <span class="a">'+uptime()+'</span>\nIdiomas: inglés B2 · Madrid · Carnet B\nEstado: <span class="g">disponible para prácticas</span>');},
   'show ip interface brief':function(){var s='<span class="d">Interface   Área              Status    Protocol</span>\n';
     IFS.forEach(function(r){s+=(r[0]+'      ').slice(0,12)+(r[1]+'                  ').slice(0,18)+'<span class="g">up        up</span>\n';});out(s.replace(/\n$/,''));},
-  proyectos:function(){out(['<span class="d">#  Proyecto                        Área</span>','1  Robotics Masters (finalista)    robótica','2  La Casa Antigua 1899            web','3  Triggers para una tienda        bases de datos','4  Proyecto final de redes         redes','5  Laboratorio de sistemas         sistemas','6  Bots de Discord y Telegram     automatización','7  Laboratorios de Packet Tracer  redes · ciberseguridad','','Escribe <span class="c">proyecto 1</span> para abrir uno.'].join('\n'));},
+  proyectos:function(){out(['<span class="d">#  Proyecto                        Área</span>','1  Robotics Masters (finalista)    robótica','2  La Casa Antigua 1899            web','3  Triggers para una tienda        bases de datos','4  Proyecto final de redes         redes','5  Laboratorio de sistemas         sistemas','6  Laboratorios de Packet Tracer  redes · ciberseguridad','','Escribe <span class="c">proyecto 1</span> para abrir uno.'].join('\n'));},
   traceroute:function(){var h=[['1','Bachillerato de Ciencias','2019-21'],['2','ASIR · Digitech FP','2025-27'],['3','Finalista ASTI Challenge','2026'],['4','Cisco Ciberseguridad','2026']],i=0;
     out('traceroute to futuro.empresa.es, 30 hops max');
     (function nx(){if(i<h.length){out(' '+h[i][0]+'  '+(h[i][1]+'                          ').slice(0,28)+'<span class="a">'+h[i][2]+'</span>');i++;setTimeout(nx,reduce?0:220);}
@@ -160,7 +160,7 @@ var C={
 };
 C['sobre-mi']=function(){go('sobre-mi','sobre mí');};C.about=C['sobre-mi'];C.skills=C['show ip interface brief'];C.habilidades=C.skills;
 C.trayectoria=C.traceroute;C.cv=C['cat cv.txt'];C['show run']=C['show running-config'];C['sh ip int br']=C['show ip interface brief'];C.ping=C['ping hugo'];
-var PJ=[function(){openDlg('asti');},function(){window.open(REST_URL,'_blank','noopener');out('<span class="d">Si no se abre:</span> <a href="'+REST_URL+'" target="_blank" rel="noopener">abrir la web del restaurante</a>');},function(){openDlg('sql');},function(){out('<span class="d">→ abriendo proyectos…</span>');location.href='/proyectos/#p4';},function(){location.href='/proyectos/#p5';},function(){location.href='/proyectos/#p6';},function(){location.href='/proyectos/#laboratorios';}];
+var PJ=[function(){openDlg('asti');},function(){window.open(REST_URL,'_blank','noopener');out('<span class="d">Si no se abre:</span> <a href="'+REST_URL+'" target="_blank" rel="noopener">abrir la web del restaurante</a>');},function(){openDlg('sql');},function(){out('<span class="d">→ abriendo proyectos…</span>');location.href='/proyectos/#p4';},function(){location.href='/proyectos/#p5';},function(){location.href='/proyectos/#laboratorios';}];
 function run(raw){var c=raw.trim().replace(/\s+/g,' ');echo(c);if(!c)return;var l=c.toLowerCase();
   if(c){hist.push(c);hi=hist.length;}
   var m=l.match(/^proyecto\s+(\d)$/);
@@ -170,7 +170,7 @@ function run(raw){var c=raw.trim().replace(/\s+/g,' ');echo(c);if(!c)return;var 
   out('<span class="r">% Invalid input detected at \'^\' marker.</span>\n<span class="d">Comando desconocido: "'+esc(c)+'". Escribe</span> <span class="c">help</span>');
 }
 form.addEventListener('submit',function(e){e.preventDefault();run(inp.value);inp.value='';});
-var ALL=Object.keys(C).concat(['proyecto 1','proyecto 2','proyecto 3','proyecto 4','proyecto 5','proyecto 6','proyecto 7']);
+var ALL=Object.keys(C).concat(['proyecto 1','proyecto 2','proyecto 3','proyecto 4','proyecto 5','proyecto 6']);
 inp.addEventListener('keydown',function(e){
   if(e.key==='ArrowUp'){if(hi>0){hi--;inp.value=hist[hi];}e.preventDefault();}
   else if(e.key==='ArrowDown'){if(hi<hist.length-1){hi++;inp.value=hist[hi];}else{hi=hist.length;inp.value='';}e.preventDefault();}
