@@ -34,7 +34,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/estilos.css?v=202611271112">
+<link rel="stylesheet" href="/estilos.css?v=202611271159">
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
@@ -100,7 +100,7 @@
             <div><b>174,81 €</b><span>de 250 € gastados</span></div>
           </div>
           <div class="chips"><span>Arduino</span><span>Python</span><span>Pygame</span><span>UDP</span><span>Blender</span><span>Sensores IR / ultrasonidos</span></div>
-          <div class="acts"><button class="btn pri" type="button" data-open="asti">Ver presentación (20 diapositivas)</button></div>
+          <div class="acts"><button class="btn pri" type="button" data-open="asti-ficha">Ficha técnica</button><button class="btn" type="button" data-open="asti">Ver presentación (20 diapositivas)</button></div>
         </div>
       </article>
 
@@ -286,6 +286,46 @@
 
 <footer><div class="wrap"><span>© 2026 Hugo González García · Madrid</span><span><a href="/privacidad/">Privacidad y aviso legal</a> · HUGO-R1 · todas las interfaces up</span></div></footer>
 
+<dialog id="dlg-asti-ficha" aria-label="Ficha técnica de Robotics Masters">
+  <div class="vw lab-vw">
+    <header><span>Robotics Masters · ficha técnica</span><button class="x" type="button" data-close>Cerrar ✕</button></header>
+    <div class="ficha">
+      <div class="fi-col">
+        <h4>El reto</h4>
+        <p>10.ª edición del ASTI Robotics Challenge, con la Gran Final en Burgos. El robot tenía que superar varias pruebas autónomas:</p>
+        <ul>
+          <li><b>Dibuja la figura:</b> trazar en papel un cuadrado, un triángulo o un rectángulo elegido al azar con un dado.</li>
+          <li><b>Tirabolos:</b> sacar 6 bolos de un círculo de 2 m sin salirse de él.</li>
+          <li><b>Sumo 1 contra 1:</b> expulsar del tatami al robot estándar de la organización.</li>
+          <li><b>Desafío final de sumo:</b> 1 contra 3 robots a la vez, para los tres mejores equipos de cada categoría.</li>
+        </ul>
+        <h4>El equipo y mi parte</h4>
+        <p>Éramos dos. Mi compañero Marco se encargaba del montaje y de comprobar que todo funcionara. Yo me encargué de la programación: los modos automáticos en Arduino y el control con mando en Python, apoyándome en IA (Claude) para aprender y depurar el código.</p>
+        <h4>Lo que más nos costó</h4>
+        <p>Las luces y las sombras de cada recinto. Los sensores que detectan la línea negra cambian su lectura según la iluminación: con un umbral mal ajustado, el robot frenaba al pasar por una sombra o, al revés, no veía el borde y se salía del círculo de sumo o de bolos.</p>
+        <p>La solución fue calibrar en cada lona y con cada iluminación: leer el valor sobre blanco y sobre negro con el monitor serie de Arduino y fijar el umbral entre los dos. Además, el «anti-borde» tiene prioridad sobre todo lo demás: si un sensor ve negro, el robot retrocede y gira hacia el centro antes de hacer nada más.</p>
+      </div>
+      <div class="fi-col">
+        <h4>Decisiones técnicas</h4>
+        <ul>
+          <li><b>Ruedas mecanum para girar en el sitio:</b> en las figuras, los vértices salen limpios, y en los bolos el robot se alinea con el objetivo sin moverse del sitio.</li>
+          <li><b>Barrido rápido con servo y ultrasonidos:</b> en el sumo final, 9 medidas (unos 400 ms) en lugar de 37 (casi 2 s), porque en ese tiempo los rivales ya se han movido.</li>
+          <li><b>Velocidad baja al dibujar:</b> trazo recto y repetible, con pausas cortas entre lados.</li>
+        </ul>
+        <h4>Qué aprendí</h4>
+        <p>Nunca había programado en Arduino ni había tocado un robot. Aprendí desde cero a programar hardware real, a probar, calibrar y volver a probar, y a repartir el trabajo con mi compañero durante siete meses.</p>
+        <h4>Material de la Gran Final</h4>
+        <ul class="fi-dl">
+          <li><a href="/asti/asti-01-dibuja-la-figura.pdf" target="_blank" rel="noopener">Estrategia · Dibuja la figura (PDF)</a></li>
+          <li><a href="/asti/asti-02-tirabolos.pdf" target="_blank" rel="noopener">Estrategia · Tirabolos (PDF)</a></li>
+          <li><a href="/asti/asti-03-sumo-1v1.pdf" target="_blank" rel="noopener">Estrategia · Sumo 1 contra 1 (PDF)</a></li>
+          <li><a href="/asti/asti-04-desafio-final-sumo.pdf" target="_blank" rel="noopener">Estrategia · Desafío final de sumo (PDF)</a></li>
+        </ul>
+        <div class="acts"><a class="btn pri" href="/asti/asti-robotics-masters-codigo.zip" download>Descargar código Arduino y estrategias (ZIP)</a></div>
+      </div>
+    </div>
+  </div>
+</dialog>
 <dialog id="dlg-asti" aria-label="Presentación Robotics Masters">
   <div class="vw">
     <header><span>Robotics Masters · ASTI Robotics Challenge</span><button class="x" type="button" data-close>Cerrar ✕</button></header>
@@ -541,7 +581,7 @@
     </div>
   </div>
 </dialog>
-<script src="/main.js?v=202611271112"></script>
+<script src="/main.js?v=202611271159"></script>
 <script>
 /* ---------- formulario de ayuda ---------- */
 (function(){
@@ -614,6 +654,6 @@
   bar.addEventListener("mouseleave",function(){tm=setTimeout(function(){open(false);},250);});
 })();
 </script>
-<script src="/efectos.js?v=202611271112"></script>
+<script src="/efectos.js?v=202611271159"></script>
 </body>
 </html>
