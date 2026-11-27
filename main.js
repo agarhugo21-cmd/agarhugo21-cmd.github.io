@@ -15,18 +15,19 @@ tick();setInterval(tick,30000);
 
 /* ---------- habilidades (niveles tomados de su CV en Notion) ---------- */
 var IFS=[
-  ['Gi0/1','Redes',['Packet Tracer','Cisco IOS','RIP','OSPF','EIGRP','VLAN e inter-VLAN','TCP/IP','Subnetting'],5,[['Proyecto final de redes','/proyectos/#p4'],['Laboratorios de Packet Tracer','/proyectos/#laboratorios']]],
-  ['Gi0/2','Hardware',['Montaje de equipos','Mantenimiento'],5],
-  ['Gi0/3','Sistemas',['Windows Server','Active Directory','Linux','Usuarios y permisos'],4,[['Laboratorio de sistemas','/proyectos/#p5']]],
-  ['Gi0/4','Servicios',['DHCP','DNS','Servidor web'],4,[['Laboratorio de sistemas','/proyectos/#p5']]],
-  ['Gi0/5','Virtualización',['VirtualBox','VMware'],4,[['Laboratorio de sistemas','/proyectos/#p5']]],
-  ['Gi0/6','Bases de datos',['MySQL','Oracle','MySQL Workbench','Triggers'],4,[['Triggers para una tienda','/proyectos/#p3']]],
-  ['Gi0/7','Desarrollo',['HTML','CSS','JavaScript','Python','Arduino'],4,[['La Casa Antigua 1899','/proyectos/#p2'],['Robotics Masters','/proyectos/#p1']]],
-  ['Gi0/8','Idiomas',['Inglés B2'],3]
+  ['Gi0/1','Redes',['Packet Tracer','Cisco IOS','RIP','OSPF','EIGRP','VLAN e inter-VLAN','TCP/IP','Subnetting'],'labs',[['Proyecto final de redes','/proyectos/#p4'],['Laboratorios de Packet Tracer','/proyectos/#laboratorios']]],
+  ['Gi0/2','Hardware',['Montaje de equipos','Mantenimiento'],'solida'],
+  ['Gi0/3','Sistemas',['Windows Server','Active Directory','Linux','Usuarios y permisos'],'labs',[['Laboratorio de sistemas','/proyectos/#p5']]],
+  ['Gi0/4','Servicios',['DHCP','DNS','Servidor web'],'labs',[['Laboratorio de sistemas','/proyectos/#p5']]],
+  ['Gi0/5','Virtualización',['VirtualBox','VMware'],'labs',[['Laboratorio de sistemas','/proyectos/#p5']]],
+  ['Gi0/6','Bases de datos',['MySQL','Oracle','MySQL Workbench','Triggers'],'labs',[['Triggers para una tienda','/proyectos/#p3']]],
+  ['Gi0/7','Desarrollo',['HTML','CSS','JavaScript','Python','Arduino'],'labs',[['La Casa Antigua 1899','/proyectos/#p2'],['Robotics Masters','/proyectos/#p1']]],
+  ['Gi0/8','Ciberseguridad',['VPN IPsec','Cisco ASA','RADIUS / AAA','Port security'],'labs',[['Laboratorios de ciberseguridad','/proyectos/#laboratorios']]],
+  ['Gi0/9','Idiomas',['Inglés B2'],'b2']
 ];
 var tb=$('#if-body');
-IFS.forEach(function(r){var tr=document.createElement('tr');var bars='';for(var i=1;i<=5;i++)bars+='<i class="'+(i<=r[3]?'on':'')+'"></i>';
-  tr.innerHTML='<td class="port">'+r[0]+'</td><td class="area">'+r[1]+'</td><td><div class="chips">'+r[2].map(function(c){return '<span>'+esc(c)+'</span>';}).join('')+'</div>'+(r[4]?'<p class="ev">Lo demuestro en: '+r[4].map(function(e){return '<a href="'+e[1]+'">'+esc(e[0])+'</a>';}).join(' · ')+'</p>':'')+'</td><td><span class="sig" role="img" aria-label="Nivel '+r[3]+' de 5">'+bars+'</span></td><td><span class="st"><span class="led"></span>connected</span></td>';
+IFS.forEach(function(r){var tr=document.createElement('tr');var LV={solida:['Base sólida','ok'],labs:['En prácticas y labs','lab'],aprendiendo:['Aprendiendo','new'],b2:['Nivel B2','ok']};var lv=LV[r[3]]||[r[3],'lab'];
+  tr.innerHTML='<td class="port">'+r[0]+'</td><td class="area">'+r[1]+'</td><td><div class="chips">'+r[2].map(function(c){return '<span>'+esc(c)+'</span>';}).join('')+'</div>'+(r[4]?'<p class="ev">Lo demuestro en: '+r[4].map(function(e){return '<a href="'+e[1]+'">'+esc(e[0])+'</a>';}).join(' · ')+'</p>':'')+'</td><td><span class="lvl '+lv[1]+'">'+lv[0]+'</span></td><td><span class="st"><span class="led"></span>connected</span></td>';
   tb.appendChild(tr);});
 
 /* ---------- topología de la portada ---------- */
