@@ -38,9 +38,9 @@ var N=[
   {id:'habilidades',x:428,y:78,t:'Habilidades',s:'VLAN 20'},
   {id:'proyectos',x:458,y:262,t:'Proyectos',s:'VLAN 30'},
   {id:'trayectoria',x:392,y:420,t:'Trayectoria',s:'VLAN 40'},
-  {id:'consola',x:128,y:420,t:'Consola',s:'VLAN 50'},
+  {id:'consola',x:128,y:420,t:'Consola',s:'CLI'},
   {id:'contacto',x:62,y:262,t:'Contacto',s:'VLAN 99'},
-  {id:'ayuda',x:260,y:62,t:'Ayuda',s:'VLAN 60'}
+  {id:'ayuda',x:260,y:62,t:'Ayuda',s:'VLAN 50'}
 ];
 var gL=$('#links'),gP=$('#pkts'),gN=$('#nodes');
 function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e;}
