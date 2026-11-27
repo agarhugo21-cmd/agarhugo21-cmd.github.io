@@ -26,7 +26,7 @@ var IFS=[
   ['Gi0/9','Idiomas',['Inglés B2'],'b2']
 ];
 var tb=$('#if-body');
-IFS.forEach(function(r){var tr=document.createElement('tr');var LV={solida:['Base sólida','ok'],labs:['En prácticas y labs','lab'],aprendiendo:['Aprendiendo','new'],b2:['Nivel B2','ok']};var lv=LV[r[3]]||[r[3],'lab'];
+if(!tb.children.length)IFS.forEach(function(r){var tr=document.createElement('tr');var LV={solida:['Base sólida','ok'],labs:['En prácticas y labs','lab'],aprendiendo:['Aprendiendo','new'],b2:['Nivel B2','ok']};var lv=LV[r[3]]||[r[3],'lab'];
   tr.innerHTML='<td class="port">'+r[0]+'</td><td class="area">'+r[1]+'</td><td><div class="chips">'+r[2].map(function(c){return '<span>'+esc(c)+'</span>';}).join('')+'</div>'+(r[4]?'<p class="ev">Lo demuestro en: '+r[4].map(function(e){return '<a href="'+e[1]+'">'+esc(e[0])+'</a>';}).join(' · ')+'</p>':'')+'</td><td><span class="lvl '+lv[1]+'">'+lv[0]+'</span></td><td><span class="st"><span class="led"></span>connected</span></td>';
   tb.appendChild(tr);});
 
@@ -52,7 +52,7 @@ function drawNode(n,isCore){
   var led=el('circle',{cx:w-12,cy:12,r:3.5,fill:'#3ddc84'});g.appendChild(led);
   var t=el('text',{x:14,y:isCore?34:24,'class':'ttl'});t.textContent=n.t;g.appendChild(t);
   var s=el('text',{x:14,y:isCore?52:40,'class':'sub'});s.textContent=n.s;g.appendChild(s);
-  if(!isCore){g.setAttribute('tabindex','0');g.setAttribute('role','link');g.setAttribute('aria-label','Ir a '+n.t);
+  if(!isCore){g.setAttribute('tabindex','0');g.setAttribute('role','link');g.setAttribute('aria-label',n.t+' '+n.s);
     var go=function(){burst(n);setTimeout(function(){var d=document.getElementById(n.id);if(d&&(n.id==='contacto'||n.id==='consola'))d.scrollIntoView({behavior:reduce?'auto':'smooth'});else location.href='/'+n.id+'/';},reduce?0:380);};
     g.addEventListener('click',go);g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
     g.addEventListener('mouseenter',function(){lines[n.id].classList.add('hot');});

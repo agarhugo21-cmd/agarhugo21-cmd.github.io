@@ -34,7 +34,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/estilos.css?v=202611271248">
+<link rel="stylesheet" href="/estilos.css?v=202611271259">
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
@@ -83,6 +83,7 @@
     <h1 class="ay-h1">¿Te ayudo con el ordenador o el móvil?</h1>
     <p class="ay-lead">Mientras estudio, ayudo de forma <b>voluntaria y sin coste</b> a quien lo necesite: personas mayores, sus familias, particulares y pequeños negocios. Por teléfono, por videollamada o conectándome a tu ordenador.</p>
 
+    <h2 class="sr-only">Con qué te puedo ayudar</h2>
     <div class="ay-grid">
       <article class="ay-card">
         <span class="ay-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></span>
@@ -178,7 +179,7 @@
           <select name="preferencia"><option>WhatsApp</option><option>Llamada de teléfono</option><option>Videollamada</option><option>Email</option></select>
         </label>
         <label>¿Qué te pasa o en qué te ayudo?<textarea name="mensaje" rows="4" required></textarea></label>
-        <input type="checkbox" name="botcheck" class="ay-hp" tabindex="-1" autocomplete="off">
+        <input type="checkbox" name="botcheck" class="ay-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label class="ay-ok"><input type="checkbox" name="acepto" required><span>He leído la <a href="/privacidad/">política de privacidad</a> y acepto que mis datos se usen solo para responder a mi mensaje. No se publicarán ni se compartirán con nadie.</span></label>
         <div class="h-captcha" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" data-theme="dark" style="margin:4px 0 12px;min-height:78px"></div>
         <script>if(window.innerWidth<440)document.currentScript.previousElementSibling.setAttribute("data-size","compact");</script>
@@ -195,7 +196,7 @@
 
 <footer><div class="wrap"><span>© 2026 Hugo González García · Madrid</span><span><a href="/privacidad/">Privacidad y aviso legal</a> · HUGO-R1 · todas las interfaces up</span></div></footer>
 
-<script src="/main.js?v=202611271248"></script>
+<script src="/main.js?v=202611271259"></script>
 <script>
 /* ---------- formulario de ayuda ---------- */
 (function(){
@@ -270,6 +271,6 @@
   bar.addEventListener("mouseleave",function(){tm=setTimeout(function(){open(false);},250);});
 })();
 </script>
-<script src="/efectos.js?v=202611271236"></script>
+<script src="/efectos.js?v=202611271259"></script>
 </body>
 </html>

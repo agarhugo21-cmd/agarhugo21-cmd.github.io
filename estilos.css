@@ -439,7 +439,7 @@ footer a{color:inherit;text-decoration:underline;text-underline-offset:3px}foote
 .ay-btn{display:flex;align-items:center;gap:12px;font:600 19px var(--body);padding:16px 20px;border-radius:12px;text-decoration:none;color:var(--fg);background:var(--bg-2);border:1px solid var(--line-2)}
 .ay-btn svg{width:24px;height:24px;flex:none}
 .ay-btn:hover{border-color:var(--cyan)}
-.ay-btn.wa{background:#1f8f4e;border-color:#1f8f4e;color:#fff}
+.ay-btn.wa{background:#187a41;border-color:#187a41;color:#fff}
 .ay-form{display:grid;gap:14px;background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:24px}
 .ay-form label{display:grid;gap:6px;font-size:16.5px;color:var(--fg-2)}
 .ay-form input:not([type=checkbox]),.ay-form select,.ay-form textarea{font:400 18px var(--body);color:var(--fg);background:var(--bg);border:1px solid var(--line-2);border-radius:9px;padding:12px 14px;width:100%;box-sizing:border-box}

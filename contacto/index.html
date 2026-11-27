@@ -34,7 +34,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/estilos.css?v=202611271248">
+<link rel="stylesheet" href="/estilos.css?v=202611271259">
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
@@ -86,6 +86,7 @@
       <div class="ping" id="ping" aria-live="polite"></div>
       <form class="ay-form" id="ay-form" novalidate>
         <span class="anchor" id="contacto-form"></span>
+      <h2 class="sr-only">Formulario y datos de contacto</h2>
         <h3>Escríbeme</h3>
         <label>Nombre<input name="nombre" required autocomplete="name"></label>
         <label>Teléfono o email<input name="contacto" required autocomplete="tel"></label>
@@ -96,7 +97,7 @@
           <select name="preferencia"><option>WhatsApp</option><option>Llamada de teléfono</option><option>Videollamada</option><option>Email</option></select>
         </label>
         <label>Cuéntame<textarea name="mensaje" rows="4" required></textarea></label>
-        <input type="checkbox" name="botcheck" class="ay-hp" tabindex="-1" autocomplete="off">
+        <input type="checkbox" name="botcheck" class="ay-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label class="ay-ok"><input type="checkbox" name="acepto" required><span>He leído la <a href="/privacidad/">política de privacidad</a> y acepto que mis datos se usen solo para responder a mi mensaje. No se publicarán ni se compartirán con nadie.</span></label>
         <div class="h-captcha" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" data-theme="dark" style="margin:4px 0 12px;min-height:78px"></div>
         <script>if(window.innerWidth<440)document.currentScript.previousElementSibling.setAttribute("data-size","compact");</script>
@@ -121,7 +122,7 @@
 
 <footer><div class="wrap"><span>© 2026 Hugo González García · Madrid</span><span><a href="/privacidad/">Privacidad y aviso legal</a> · HUGO-R1 · todas las interfaces up</span></div></footer>
 
-<script src="/main.js?v=202611271248"></script>
+<script src="/main.js?v=202611271259"></script>
 <script>
 /* ---------- formulario de ayuda ---------- */
 (function(){
@@ -196,6 +197,6 @@
   bar.addEventListener("mouseleave",function(){tm=setTimeout(function(){open(false);},250);});
 })();
 </script>
-<script src="/efectos.js?v=202611271236"></script>
+<script src="/efectos.js?v=202611271259"></script>
 </body>
 </html>
