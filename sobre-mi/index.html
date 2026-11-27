@@ -34,7 +34,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/estilos.css?v=202611271159">
+<link rel="stylesheet" href="/estilos.css?v=202611271236">
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
@@ -117,7 +117,7 @@ Estado       : <span class="g">disponible para prácticas</span></pre>
 
 <footer><div class="wrap"><span>© 2026 Hugo González García · Madrid</span><span><a href="/privacidad/">Privacidad y aviso legal</a> · HUGO-R1 · todas las interfaces up</span></div></footer>
 
-<script src="/main.js?v=202611271159"></script>
+<script src="/main.js?v=202611271236"></script>
 <script>
 /* ---------- formulario de ayuda ---------- */
 (function(){
@@ -190,7 +190,7 @@ Estado       : <span class="g">disponible para prácticas</span></pre>
   bar.addEventListener("mouseleave",function(){tm=setTimeout(function(){open(false);},250);});
 })();
 </script>
-<script src="/efectos.js?v=202611271159"></script>
+<script src="/efectos.js?v=202611271236"></script>
 <script>
 (function(){var els=document.querySelectorAll("[data-n]");if(!els.length)return;var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;function fmt(v){return v.toLocaleString("es-ES",{useGrouping:"always"});}
   function run(el){var n=+el.dataset.n;if(reduce){el.textContent=fmt(n);return;}var t0=null;function f(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1200),e=1-Math.pow(1-p,3);el.textContent=fmt(Math.round(n*e));if(p<1)requestAnimationFrame(f);}requestAnimationFrame(f);}

@@ -21,7 +21,7 @@ var IFS=[
   ['Gi0/4','Servicios',['DHCP','DNS','Servidor web'],'labs',[['Laboratorio de sistemas','/proyectos/#p5']]],
   ['Gi0/5','Virtualización',['VirtualBox','VMware'],'labs',[['Laboratorio de sistemas','/proyectos/#p5']]],
   ['Gi0/6','Bases de datos',['MySQL','Oracle','MySQL Workbench','Triggers'],'labs',[['Triggers para una tienda','/proyectos/#p3']]],
-  ['Gi0/7','Desarrollo',['HTML','CSS','JavaScript','Python','Arduino'],'labs',[['La Casa Antigua 1899','/proyectos/#p2'],['Robotics Masters','/proyectos/#p1']]],
+  ['Gi0/7','Desarrollo',['HTML','CSS','JavaScript','Python','Arduino'],'labs',[['La Casa Antigua 1899','/proyectos/#p2'],['Robotics Masters','/proyectos/#p1'],['Bots de Discord y Telegram','/proyectos/#p6']]],
   ['Gi0/8','Ciberseguridad',['VPN IPsec','Cisco ASA','RADIUS / AAA','Port security'],'labs',[['Laboratorios de ciberseguridad','/proyectos/#laboratorios']]],
   ['Gi0/9','Idiomas',['Inglés B2'],'b2']
 ];
