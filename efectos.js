@@ -15,7 +15,7 @@
     var f=0;(function step(){f++;var done=true;nodes.forEach(function(o){var s='';for(var i=0;i<o.t.length;i++){var ch=o.t[i];if(ch===' '||ch==='\n'||f>=o.d[i])s+=ch;else{s+=G[Math.random()*G.length|0];done=false;}}o.n.nodeValue=s;});if(!done)setTimeout(step,30);})();
     setTimeout(function(){nodes.forEach(function(o){o.n.nodeValue=o.t;});h.style.height='';},2000);
   }
-  var hs=[].slice.call(document.querySelectorAll('main h1, #consola h2, #contacto h2'));
+  var hs=[].slice.call(document.querySelectorAll('#inicio h1'));
   if(!('IntersectionObserver' in window)){hs.forEach(scramble);return;}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io.unobserve(e.target);scramble(e.target);}});},{threshold:.25});
   hs.forEach(function(h){io.observe(h);});
