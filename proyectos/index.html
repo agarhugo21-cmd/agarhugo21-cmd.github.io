@@ -37,6 +37,7 @@
 <link rel="stylesheet" href="/estilos.css">
 </head>
 <body>
+<a class="skip" href="#main">Saltar al contenido</a>
 
 <header class="bar" id="bar">
   <div class="wrap">
@@ -73,7 +74,7 @@
   <div class="progress" id="progress" aria-hidden="true"></div>
 </header>
 
-<main>
+<main id="main">
 <!-- ===================== PROYECTOS ===================== -->
 <section id="proyectos" class="page-top">
   <div class="wrap">
@@ -103,48 +104,6 @@
         </div>
       </article>
 
-      <article id="p2" class="pj">
-        <div class="media">
-          <img src="/rest-hero.jpg" alt="Plato de la carta de La Casa Antigua 1899" loading="lazy">
-          <span class="badge"><span class="led amber"></span>Proyecto final</span>
-        </div>
-        <div class="bd">
-          <p class="if-line">Gi0/2 · <b>up/up</b> · desarrollo web</p>
-          <h3>La Casa Antigua 1899</h3>
-          <p>Web completa para un restaurante ficticio, sin frameworks. Tiene carrusel automático y manual, menú desplegable, reloj 12/24 h, aviso de cookies y tres formularios con validación propia en JavaScript. Funciona en móvil, tableta y escritorio.</p>
-          <div class="nums"><div><b>10</b><span>páginas</span></div><div><b>3</b><span>formularios</span></div><div><b>2</b><span>breakpoints</span></div></div>
-          <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive</span></div>
-          <div class="acts"><a class="btn pri" href="/proyectos/restaurante/">Abrir la web ↗</a></div>
-        </div>
-      </article>
-
-      <article id="p3" class="pj">
-        <div class="media">
-<pre class="code" aria-label="Fragmento del trigger comprobar_stock"><span class="cm">-- Bloquea pedidos sin stock suficiente</span>
-<span class="kw">CREATE TRIGGER</span> comprobar_stock
-<span class="kw">BEFORE INSERT ON</span> detalle_pedidos
-<span class="kw">FOR EACH ROW</span>
-<span class="kw">BEGIN</span>
-  <span class="kw">DECLARE</span> stock_actual <span class="kw">INT</span>;
-  <span class="kw">SELECT</span> stock <span class="kw">INTO</span> stock_actual
-    <span class="kw">FROM</span> productos
-   <span class="kw">WHERE</span> id_producto = NEW.id_producto;
-  <span class="kw">IF</span> stock_actual &lt; NEW.cantidad <span class="kw">THEN</span>
-    <span class="kw">SIGNAL SQLSTATE</span> <span class="s">'45000'</span>
-      <span class="kw">SET</span> MESSAGE_TEXT = <span class="s">'Stock insuficiente'</span>;
-  <span class="kw">END IF</span>;
-<span class="kw">END</span> $</pre>
-        </div>
-        <div class="bd">
-          <p class="if-line">Gi0/3 · <b>up/up</b> · bases de datos</p>
-          <h3>Triggers para una tienda</h3>
-          <p>Práctica final de bases de datos en MySQL. Diez triggers que mantienen solos la coherencia de los pedidos: copian precios, calculan subtotales y totales, descuentan y devuelven stock, bloquean ventas sin existencias y dejan registro de los cambios.</p>
-          <div class="nums"><div><b>10</b><span>triggers</span></div><div><b>3</b><span>tablas de registro</span></div></div>
-          <div class="chips"><span>MySQL</span><span>Triggers</span><span>SIGNAL</span><span>Auditoría</span></div>
-          <div class="acts"><button class="btn pri" type="button" data-open="sql">Leer el código</button></div>
-        </div>
-      </article>
-
       <article id="p4" class="pj">
         <div class="media">
           <div class="pt" aria-hidden="true">
@@ -158,7 +117,7 @@
           </div>
         </div>
         <div class="bd">
-          <p class="if-line">Gi0/4 · <b>up/up</b> · redes</p>
+          <p class="if-line">Gi0/2 · <b>up/up</b> · redes</p>
           <h3>Proyecto final de redes</h3>
           <p>Ejercicio final de repaso de 1.º de ASIR en Cisco Packet Tracer. Diseño de la topología, direccionamiento y configuración de routers y switches Cisco desde la línea de comandos.</p>
           <div class="chips"><span>Packet Tracer</span><span>Cisco IOS</span><span>Subnetting</span><span>Enrutamiento</span></div>
@@ -184,10 +143,52 @@
           </div>
         </div>
         <div class="bd">
-          <p class="if-line">Gi0/5 · <b>up/up</b> · sistemas</p>
+          <p class="if-line">Gi0/3 · <b>up/up</b> · sistemas</p>
           <h3>Laboratorio de sistemas</h3>
           <p>Prácticas de clase con máquinas virtuales en VirtualBox y VMware: dominio con Active Directory en Windows Server (usuarios, grupos y permisos), y servidores Linux con DHCP, DNS y web.</p>
           <div class="chips"><span>Windows Server</span><span>Active Directory</span><span>Linux</span><span>VirtualBox</span><span>VMware</span></div>
+        </div>
+      </article>
+
+      <article id="p3" class="pj">
+        <div class="media">
+<pre class="code" aria-label="Fragmento del trigger comprobar_stock"><span class="cm">-- Bloquea pedidos sin stock suficiente</span>
+<span class="kw">CREATE TRIGGER</span> comprobar_stock
+<span class="kw">BEFORE INSERT ON</span> detalle_pedidos
+<span class="kw">FOR EACH ROW</span>
+<span class="kw">BEGIN</span>
+  <span class="kw">DECLARE</span> stock_actual <span class="kw">INT</span>;
+  <span class="kw">SELECT</span> stock <span class="kw">INTO</span> stock_actual
+    <span class="kw">FROM</span> productos
+   <span class="kw">WHERE</span> id_producto = NEW.id_producto;
+  <span class="kw">IF</span> stock_actual &lt; NEW.cantidad <span class="kw">THEN</span>
+    <span class="kw">SIGNAL SQLSTATE</span> <span class="s">'45000'</span>
+      <span class="kw">SET</span> MESSAGE_TEXT = <span class="s">'Stock insuficiente'</span>;
+  <span class="kw">END IF</span>;
+<span class="kw">END</span> $</pre>
+        </div>
+        <div class="bd">
+          <p class="if-line">Gi0/4 · <b>up/up</b> · bases de datos</p>
+          <h3>Triggers para una tienda</h3>
+          <p>Práctica final de bases de datos en MySQL. Diez triggers que mantienen solos la coherencia de los pedidos: copian precios, calculan subtotales y totales, descuentan y devuelven stock, bloquean ventas sin existencias y dejan registro de los cambios.</p>
+          <div class="nums"><div><b>10</b><span>triggers</span></div><div><b>3</b><span>tablas de registro</span></div></div>
+          <div class="chips"><span>MySQL</span><span>Triggers</span><span>SIGNAL</span><span>Auditoría</span></div>
+          <div class="acts"><button class="btn pri" type="button" data-open="sql">Leer el código</button></div>
+        </div>
+      </article>
+
+      <article id="p2" class="pj">
+        <div class="media">
+          <img src="/rest-hero.jpg" alt="Plato de la carta de La Casa Antigua 1899" loading="lazy">
+          <span class="badge"><span class="led amber"></span>Proyecto final</span>
+        </div>
+        <div class="bd">
+          <p class="if-line">Gi0/5 · <b>up/up</b> · desarrollo web</p>
+          <h3>La Casa Antigua 1899</h3>
+          <p>Web completa para un restaurante ficticio, sin frameworks. Tiene carrusel automático y manual, menú desplegable, reloj 12/24 h, aviso de cookies y tres formularios con validación propia en JavaScript. Funciona en móvil, tableta y escritorio.</p>
+          <div class="nums"><div><b>10</b><span>páginas</span></div><div><b>3</b><span>formularios</span></div><div><b>2</b><span>breakpoints</span></div></div>
+          <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive</span></div>
+          <div class="acts"><a class="btn pri" href="/proyectos/restaurante/">Abrir la web ↗</a></div>
         </div>
       </article>
     </div>

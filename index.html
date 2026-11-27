@@ -37,6 +37,7 @@
 <link rel="stylesheet" href="/estilos.css">
 </head>
 <body>
+<a class="skip" href="#main">Saltar al contenido</a>
 
 <header class="bar" id="bar">
   <div class="wrap">
@@ -73,7 +74,7 @@
   <div class="progress" id="progress" aria-hidden="true"></div>
 </header>
 
-<main>
+<main id="main">
 <!-- ===================== PORTADA ===================== -->
 <section class="hero grid-bg solo" id="inicio" style="padding-block:0">
   <div class="wrap">
@@ -84,7 +85,7 @@
         %LINK-3-UPDOWN: Interface Gi0/0, changed state to <span>up</span>
       </p>
       <h1 class="rise d1">Hugo González<span class="l2">García</span></h1>
-      <p class="role rise d2">Administración de Sistemas<i></i>Redes<i></i>Bases de datos</p>
+      <p class="role rise d2">Administración de Sistemas<i aria-hidden="true"></i><span class="sr-only">, </span>Redes<i aria-hidden="true"></i><span class="sr-only">, </span>Bases de datos</p>
       <p class="lede rise d3">Estudiante de ASIR en Madrid. Configuro redes Cisco, administro Windows Server y Linux, y diseño bases de datos que se mantienen solas. Fui finalista del ASTI Robotics Challenge 2026 con mi equipo.</p>
       <div class="hero-ctas rise d4">
         <a class="btn pri" href="/proyectos/">Ver proyectos <span aria-hidden="true">→</span></a>
@@ -113,7 +114,7 @@
       <h2>¿Prefieres la línea de comandos?</h2>
       <p class="intro">Todo el portfolio también se puede recorrer desde aquí. Escribe <span class="mono" style="color:var(--cyan)">help</span> o pulsa un comando. Funciona el tabulador para autocompletar y las flechas para el historial.</p>
       <div class="quick" id="quick">
-        <button type="button">help</button><button type="button">whoami</button><button type="button">show ip interface brief</button><button type="button">proyectos</button><button type="button">ping hugo</button><button type="button">sudo contratar</button>
+        <button type="button">help</button><button type="button">whoami</button><button type="button">show ip interface brief</button><button type="button">proyectos</button><button type="button">ping hugo</button><button type="button">contacto</button>
       </div>
     </div>
     <div class="term">

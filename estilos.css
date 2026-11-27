@@ -10,7 +10,7 @@
   --line-2:#2a3a50;
   --fg:#e6edf5;
   --fg-2:#a9b6c6;
-  --dim:#6f7f94;
+  --dim:#7d8ca2;
   --cyan:#47c6ff;
   --cyan-deep:#1a5a7a;
   --amber:#ffb547;
@@ -183,7 +183,7 @@ table.if td.area{color:var(--fg);font-family:var(--body);font-weight:500;font-si
 .trace{margin-top:44px;font-family:var(--mono)}
 .hop{display:grid;grid-template-columns:44px 120px minmax(0,1fr);gap:20px;padding:22px 0;border-bottom:1px dashed var(--line-2);position:relative}
 .hop:first-child{border-top:1px dashed var(--line-2)}
-.hop .n{font:600 28px/1 var(--display);color:var(--line-2)}
+.hop .n{font:600 28px/1 var(--display);color:#5a6e8c}
 .hop .t{font-size:13px;color:var(--amber);padding-top:6px;font-variant-numeric:tabular-nums}
 .hop h3{font-family:var(--body);font-size:20px;font-weight:600;line-height:1.3}
 .hop .where{font-size:13px;color:var(--cyan);margin-top:4px}
@@ -454,3 +454,10 @@ footer a{color:inherit;text-decoration:underline;text-underline-offset:3px}foote
 @media (max-width:860px){.ay-contact{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:700px){.ay-ia ul{columns:1}}
 @media (max-width:600px){.ay{font-size:17px}.ay-card{padding:20px}.ay-safe{flex-direction:column}}
+
+/* solo para lectores de pantalla */
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+table.if .ev{margin-top:8px;font:400 12.5px var(--mono);color:var(--dim)}
+table.if .ev a{color:var(--cyan)}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;padding:10px 14px;border-radius:8px;background:var(--amber);color:var(--bg);font:600 14px var(--mono);text-decoration:none}
+.skip:focus{top:12px}
