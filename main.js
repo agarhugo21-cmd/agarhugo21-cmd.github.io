@@ -135,7 +135,7 @@ var C={
     '  <span class="c">ping hugo</span>                ¿estoy disponible?',
     '  <span class="c">sudo contratar</span>           …',
     '  <span class="c">clear</span>                    limpiar pantalla'].join('\n'));},
-  whoami:function(){out('<span class="w">Hugo González García</span>\nEstudiante de 2.º de ASIR en Digitech FP Madrid.\nRedes, sistemas y bases de datos. Finalista del ASTI Robotics Challenge 2026.');},
+  whoami:function(){out('<span class="w">Hugo González García</span>\nEstudiante de 2.º de ASIR en <a href="https://www.digitechfp.com" target="_blank" rel="noopener">Digitech FP Madrid</a>.\nRedes, sistemas y bases de datos. Finalista del ASTI Robotics Challenge 2026.');},
   'show version':function(){out('Hugo González García, versión <span class="w">ASIR 2.º curso</span>\nuptime is <span class="a">'+uptime()+'</span>\nIdiomas: inglés B2 · Madrid · Carnet B\nEstado: <span class="g">disponible para prácticas</span>');},
   'show ip interface brief':function(){var s='<span class="d">Interface   Área              Status    Protocol</span>\n';
     IFS.forEach(function(r){s+=(r[0]+'      ').slice(0,12)+(r[1]+'                  ').slice(0,18)+'<span class="g">up        up</span>\n';});out(s.replace(/\n$/,''));},
